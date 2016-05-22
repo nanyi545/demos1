@@ -53,6 +53,7 @@
             android:name=".activities.matDesign.RecyclerViewActivity"
             android:label="@string/title_activity_material_design"
             android:theme="@style/MDTheme">
+
             <!-- divider line is defined in this theme -->
             <!-- android:theme="@style/CrazyTheme" -->
         </activity>
@@ -67,6 +68,7 @@
             android:name=".activities.matDesign.RecyclerViewActivity2"
             android:label="@string/title_activity_recycler_view2"
             android:theme="@style/MDTheme">
+
             <!-- divider line is defined in this theme -->
         </activity>
         <activity
@@ -169,7 +171,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".okhttpDemo.OKhttpActivity"></activity>
+        <activity android:name=".okhttpDemo.OKhttpActivity" />
+        <activity android:name=".guavaDest.GuavaTestActivity"></activity>
     </application>
 
 </manifest>

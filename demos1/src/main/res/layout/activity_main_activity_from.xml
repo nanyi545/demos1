@@ -331,6 +331,13 @@
             android:onClick="jump_http"
             android:text="OKHTTP测试"/>
 
+        <Button
+            android:id="@+id/button45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button44"
+            android:onClick="jump_guava"
+            android:text="Guava测试"/>
 
 
     </RelativeLayout>

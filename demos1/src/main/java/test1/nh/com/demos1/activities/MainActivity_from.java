@@ -37,6 +37,7 @@ import test1.nh.com.demos1.activities.matDesign.MatDesignPanelActivity;
 import test1.nh.com.demos1.activityManagerActivity.ActManagerActivity;
 import test1.nh.com.demos1.audioTest.AudioActivity;
 import test1.nh.com.demos1.broadcastReceiverDemo.BCRActivity;
+import test1.nh.com.demos1.guavaDest.GuavaTestActivity;
 import test1.nh.com.demos1.ipcDemo.IPCactivity;
 import test1.nh.com.demos1.launchMode.LaunchModeActivity;
 import test1.nh.com.demos1.mvpSQL.pack.SQLiteBoilerActivity;
@@ -450,6 +451,10 @@ public class MainActivity_from extends AppCompatActivity {
 
     public void jump_http(View view){
         OKhttpActivity.start(this);}
+
+    public void jump_guava(View view){
+        GuavaTestActivity.start(this);}
+
 
 
     @Override

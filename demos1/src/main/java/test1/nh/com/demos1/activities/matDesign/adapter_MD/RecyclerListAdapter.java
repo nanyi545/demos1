@@ -80,8 +80,8 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
             }
         });
 
-        // ----picasso-------
-        Picasso.with(context).load(mItems.get(position)).into(holder.netImage);
+        //  -----use picasso to load images-------
+//        Picasso.with(context).load(mItems.get(position)).into(holder.netImage);
 
 
     }

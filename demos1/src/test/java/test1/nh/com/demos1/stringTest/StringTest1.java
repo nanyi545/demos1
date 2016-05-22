@@ -41,4 +41,27 @@ public class StringTest1 {
     }
 
 
+    @Test
+    public void test4(){
+        String str1="1 2 3 4 5";
+        int length=str1.length();
+        String[] strs=str1.split(" ");   // split
+        for (int a=0;a<strs.length;a++){
+            System.out.println(""+a+":"+strs[a]);
+        }
+    }
+
+    @Test
+    public void test5(){
+        String str1="1 2 3 4 5";
+        String[] strs=str1.split(" ");
+        for (int a=0;a<strs.length;a++){
+            int temp=Integer.parseInt(strs[a]);   // convert string 2 int
+            System.out.println("string:"+a+":"+strs[a]);
+            System.out.println("int:"+a+":"+temp);
+        }
+    }
+
+
+
 }

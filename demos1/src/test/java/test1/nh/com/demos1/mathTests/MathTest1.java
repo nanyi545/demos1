@@ -26,6 +26,12 @@ public class MathTest1 {
     }
 
 
+    @Test
+    public void test2(){
+        int a1=-1;
+        int a=Math.abs(a1);
+        System.out.println(""+a1+"   "+a);
+    }
 
 
 

@@ -152,7 +152,14 @@ public class DataParseUtils {
                 offset += 4;
                 // name 节点名
                 serverName = getOneString(offset, data);
-                offset += (serverName.length() + 1);
+
+                try {
+                    offset += (serverName.getBytes(WPConstant.STRING_GB2312).length + 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+
                 if (DEBUG) {
                     Log.i(TAG, "Name:" + serverName);
                 }
@@ -160,7 +167,11 @@ public class DataParseUtils {
                 serverId = getOneString(offset, data);
                 Log.i("Communication","--??????---"+i+"  ;;; "+serverId+"   station type:"+stationType+ "   server name:"+serverName);
 
-                offset += (serverId.length() + 1);
+                try {
+                    offset += (serverId.getBytes(WPConstant.STRING_GB2312).length + 1);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
                 // 处理结果
                 if (parentId == 0 && !serverName.equals("")) {
                     // 设置用户名
@@ -255,7 +266,15 @@ public class DataParseUtils {
 
             // deviceName 昵称
             deviceName = getOneString(offset, data);
-            offset += (deviceName.length() + 1);
+
+            try {
+                offset += (deviceName.getBytes(WPConstant.STRING_GB2312).length + 1);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+
+
 
             // 创建设备
             BaseDevice device = DeviceFactory.getInstance().createDevice(deviceTypeLocal);
@@ -341,7 +360,12 @@ public class DataParseUtils {
             // device 设备昵称 string
             String deviceName = getOneString(offset, data);
             alarm.setDeviceName(deviceName);
-            offset += (deviceName.length() + 1);
+            try {
+                offset += (deviceName.getBytes(WPConstant.STRING_GB2312).length + 1);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
 
 //            // posType 位置信息类型  2
 //            short posType = JTools.Bytes2ToShort(data, offset);
@@ -673,7 +697,12 @@ public class DataParseUtils {
             // 获取战场ID // serverId (String)
             serverId = getOneString(offset, trimmedData);
             stationId = serverId.hashCode();
-            offset += (serverId.length() + 1);
+            try {
+                offset += (serverId.getBytes(WPConstant.STRING_GB2312).length + 1);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
 
             // sFlag 战场状态
             flag = JTools.Bytes2ToShort(trimmedData, offset);
