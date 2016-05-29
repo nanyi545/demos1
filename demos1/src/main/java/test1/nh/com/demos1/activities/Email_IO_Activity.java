@@ -101,12 +101,12 @@ public class Email_IO_Activity extends AppCompatActivity {
         Email email = new SimpleEmail();
         email.setHostName("smtp.163.com"); // 163 smtp address
         email.setSmtpPort(25);// 163 smtp port
-        email.setAuthenticator(new org.apache.commons.mail.DefaultAuthenticator("webcon_log@163.com", "webcon-log"));
+        email.setAuthenticator(new org.apache.commons.mail.DefaultAuthenticator("hcholding_log@163.com", "android_log"));
         email.setSSLOnConnect(true);
-        email.setFrom("webcon_log@163.com");
+        email.setFrom("hcholding_log@163.com");
         email.setSubject("testEmail");
         email.setMsg("testEmail");
-        email.addTo("webcon_log@163.com");
+        email.addTo("hcholding_log@163.com");
         email.send();
     }
 
@@ -124,7 +124,7 @@ public class Email_IO_Activity extends AppCompatActivity {
                 Session session = Session.getInstance(props, new Authenticator() {
                     @Override
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("webcon_log@163.com", "webcon-log");  //设置用户名密码
+                        return new PasswordAuthentication("hcholding_log@163.com", "android_log");  //设置用户名密码
                     }
                 }); // 获取验证会话
 
@@ -132,8 +132,8 @@ public class Email_IO_Activity extends AppCompatActivity {
                     // 配置发送及接收邮箱
                     InternetAddress fromAddress, toAddress;
                     /* TODO ##这个地方需要改成自己的邮箱 */
-                    fromAddress = new InternetAddress("webcon_log@163.com");
-                    toAddress = new InternetAddress("webcon_log@163.com");
+                    fromAddress = new InternetAddress("hcholding_log@163.com");
+                    toAddress = new InternetAddress("hcholding_log@163.com");
 
                     // 配置发送信息
                     MimeMessage message = new MimeMessage(session);

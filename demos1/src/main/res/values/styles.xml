@@ -113,4 +113,13 @@
 
 
 
+    <style name="CustomLoading" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Small</item>
+        <item name="DialogTitleText">登陆中 请稍后</item>
+        <item name="DialogSpotCount">7</item>
+    </style>
+
+    <!--<item name="DialogSpotColor">@android:color/holo_orange_dark</item>-->
+
+
 </resources>

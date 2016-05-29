@@ -340,6 +340,23 @@
             android:text="Guava测试"/>
 
 
+        <Button
+            android:id="@+id/button46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button45"
+            android:onClick="jump_loading"
+            android:text="loading 测试"/>
+
+        <Button
+            android:id="@+id/button47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button46"
+            android:onClick="jump_keyTest"
+            android:text="on key 测试"/>
+
+
     </RelativeLayout>
 
 </ScrollView>

@@ -172,7 +172,9 @@
         </receiver>
 
         <activity android:name=".okhttpDemo.OKhttpActivity" />
-        <activity android:name=".guavaDest.GuavaTestActivity"></activity>
+        <activity android:name=".guavaDest.GuavaTestActivity" />
+        <activity android:name=".activities.LoadingTestActivity" />
+        <activity android:name=".activities.KeyEventActivity"></activity>
     </application>
 
 </manifest>

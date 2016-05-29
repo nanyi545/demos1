@@ -455,7 +455,11 @@ public class MainActivity_from extends AppCompatActivity {
     public void jump_guava(View view){
         GuavaTestActivity.start(this);}
 
+    public void jump_loading(View view){
+        LoadingTestActivity.start(this);}
 
+    public void jump_keyTest(View view){
+        KeyEventActivity.start(this);}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
