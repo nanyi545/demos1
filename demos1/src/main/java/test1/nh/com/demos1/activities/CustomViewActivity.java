@@ -10,8 +10,10 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import test1.nh.com.demos1.R;
+import test1.nh.com.demos1.customView.CircleViewPlus;
 import test1.nh.com.demos1.customView.ExpandView;
 import test1.nh.com.demos1.customView.PieChartc;
 
@@ -19,6 +21,9 @@ public class CustomViewActivity extends AppCompatActivity {
 
 
     private ExpandView shape;
+
+    private CircleViewPlus cvplus;
+    private RelativeLayout layout;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,6 +53,8 @@ public class CustomViewActivity extends AppCompatActivity {
         });
 
 
+
+
         shape = (ExpandView) findViewById(R.id.ev1);
         shape.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +78,17 @@ public class CustomViewActivity extends AppCompatActivity {
 //                }
             }
         });
+
+
+        // circular view with progress indicator !
+        cvplus=(CircleViewPlus)findViewById(R.id.cvplus);
+        layout=(RelativeLayout) findViewById(R.id.container_rel);
+//        cvplus.setProgress(50);
+        cvplus.resetCircleView(40,layout);
+
+
     }
+
 
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

@@ -49,6 +49,12 @@
     </declare-styleable>
 
 
+    <declare-styleable name="CircleViewPlus">
+        <attr name="arcBarColor" format="color" />
+        <attr name="progressBarColor" format="color" />
+        <attr name="progressTextColor" format="color" />
+    </declare-styleable>
+
 
 
 </resources>
