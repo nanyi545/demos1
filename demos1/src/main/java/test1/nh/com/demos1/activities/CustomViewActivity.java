@@ -84,11 +84,22 @@ public class CustomViewActivity extends AppCompatActivity {
         cvplus=(CircleViewPlus)findViewById(R.id.cvplus);
         layout=(RelativeLayout) findViewById(R.id.container_rel);
 //        cvplus.setProgress(50);
-        cvplus.resetCircleView(40,layout);
+//        cvplus.resetCircleView(layout);
 
 
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        final ObjectAnimator animator = ObjectAnimator.ofInt(cvplus, "progress",3, 77);
+//        animator.setDuration(3000L);
+//        animator.setEvaluator(new IntEvaluator());
+//        animator.setInterpolator(new DecelerateInterpolator(1));
+//        animator.start();
+        cvplus.animateTo(95);
+    }
 
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

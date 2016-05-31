@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.ComponentCallbacks2;
+import android.content.Context;
 import android.util.Log;
 
 import com.baidu.apistore.sdk.ApiStoreSDK;
@@ -15,12 +16,19 @@ import test1.nh.com.demos1.dependencyInjection.di3.components.Di3Component;
 import test1.nh.com.demos1.testDemo.di_pack.components.DaggerDataComponent;
 import test1.nh.com.demos1.testDemo.di_pack.components.IComponent;
 
+import static android.support.multidex.MultiDex.install;
+
 /**
  * Created by Administrator on 15-11-23.
  */
 public class DMapplication extends Application {
 
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        install(this);
+    }
 
     private Runnable checkStateRunnable=new Runnable(){
         @Override

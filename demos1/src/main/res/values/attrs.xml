@@ -53,6 +53,7 @@
         <attr name="arcBarColor" format="color" />
         <attr name="progressBarColor" format="color" />
         <attr name="progressTextColor" format="color" />
+        <attr name="progress" format="integer"/>
     </declare-styleable>
 
 

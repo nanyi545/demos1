@@ -3,6 +3,8 @@ package test1.nh.com.demos1.customView;
 /**
  * Created by zhengdonghui1 on 15/7/15.
  */
+import android.animation.IntEvaluator;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -10,8 +12,8 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
 import test1.nh.com.demos1.R;
 
@@ -55,6 +57,7 @@ public class CircleViewPlus extends View {
             arcBarColor = a.getColor(R.styleable.CircleViewPlus_arcBarColor, 0xff888888);
             progressBarColor= a.getColor(R.styleable.CircleViewPlus_progressBarColor, 0xff000000);
             progressTextColor= a.getColor(R.styleable.CircleViewPlus_progressTextColor, 0xffffffff);
+            value=a.getInteger(R.styleable.CircleViewPlus_progress, 0);
         } finally {
             // release the TypedArray so that it can be reused.
             a.recycle();
@@ -77,6 +80,7 @@ public class CircleViewPlus extends View {
             arcBarColor = a.getColor(R.styleable.CircleViewPlus_arcBarColor, 0xff888888);
             progressBarColor= a.getColor(R.styleable.CircleViewPlus_progressBarColor, 0xff000000);
             progressTextColor= a.getColor(R.styleable.CircleViewPlus_progressTextColor, 0xffffffff);
+            value=a.getInteger(R.styleable.CircleViewPlus_progress, 0);
         } finally {
             // release the TypedArray so that it can be reused.
             a.recycle();
@@ -94,31 +98,66 @@ public class CircleViewPlus extends View {
 
     public void setProgress(int value){
         this.value = value;
+        resetCircleView();
         invalidate();
     }
 
-    public void resetCircleView(int value,View view){
-//        Log.i("hcyd","resetCiecleView.value="+value);
+
+
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        viewWidth=w;
+        viewHeight=h;
+    }
+
+
+    int viewWidth;
+    int viewHeight;
+
+    public void resetCircleView(int value){
         this.value = value;
+        resetCircleView();
+    }
+
+    public void animateTo(int percent){
+        final ObjectAnimator animator = ObjectAnimator.ofInt(this, "progress",0, percent);
+        animator.setDuration(3000L);
+        animator.setEvaluator(new IntEvaluator());
+        animator.setInterpolator(new DecelerateInterpolator(1));
+        animator.start();
+    }
+
+    public void resetCircleView(){
+//        Log.i("hcyd","resetCiecleView.value="+value);
+
 
 //        Log.i("hcyd","this.value="+this.value);
-        float radius = WidgetController.getWidth(view)/2*0.87f;   // the ratio is set to 0.87f, so that the arc does not get clipped by the container (relative layout)
+//        float radius = WidgetController.getWidth(view)/2*0.87f;   // the ratio is set to 0.87f, so that the arc does not get clipped by the container (relative layout)
+        float radius = viewWidth/2*0.87f;
+
 //        float width = 5f;
         float width = radius/10;
 
 
-        double textsize = WidgetController.getWidth(view)/2*0.3;
+        double textsize =viewWidth/2*0.3;
         int size = (int)textsize;
-        this.c_x = WidgetController.getWidth(view)/2;
-        this.c_y = WidgetController.getHeight(view)/2;
-        float R = WidgetController.getWidth(view)/2;
+        this.c_x = viewWidth/2;
+        this.c_y = viewHeight/2;
+        float R = viewWidth/2;
         float r = radius;
         double x = R+r*Math.cos((value*getTotalArcLength()/100+startAngle)*Math.PI/180);
         double y = R+r*Math.sin((value*getTotalArcLength()/100+startAngle)*Math.PI/180);
 
         this.s_c_x = (float)x;
         this.s_c_y = (float)y;
-        this.radius = WidgetController.getWidth(view)/2;
+        this.radius = viewWidth/2;
 //        Log.i("hcyd","radios="+radius);
 //        Log.i("hcyd","width="+WidgetController.getWidth(view));
 //        Log.i("hcyd","height="+WidgetController.getHeight(view));
@@ -132,13 +171,13 @@ public class CircleViewPlus extends View {
 
         this.textpaint.setTextSize(s_radius);
 
-        this.area = new RectF(WidgetController.getWidth(view)/2-radius,
-                WidgetController.getWidth(view)/2-radius,
-                WidgetController.getWidth(view)/2+radius,
-                WidgetController.getWidth(view)/2+radius);
+        this.area = new RectF(viewWidth/2-radius,
+                viewWidth/2-radius,
+                viewWidth/2+radius,
+                viewWidth/2+radius);
 //        Log.i("hcyd", "area=" + area.toString());
-        this.txt_X = WidgetController.getWidth(view)/2 - size-20;
-        this.txt_Y = WidgetController.getHeight(view)/2 + size/3;
+        this.txt_X = viewWidth/2 - size-20;
+        this.txt_Y = viewWidth/2 + size/3;
 
 //        invalidate();
     }
@@ -184,6 +223,7 @@ public class CircleViewPlus extends View {
 //                Shader.TileMode.CLAMP);
 //        progressshader =
 //        paint.setShader(shader);
+        resetCircleView();
 
     }
 
@@ -193,8 +233,8 @@ public class CircleViewPlus extends View {
     protected void onDraw(Canvas canvas) {
         // TODO Auto-generated method stub
         //canvas.drawColor(Color.WHITE);
-        Log.i("hcyd", "circleview.value=" + value);
 //        canvas.drawCircle(c_x, c_y, radius * 0.72f, roundpaint);  // empty circle in the center ...  not needed here
+        resetCircleView();
         canvas.drawArc(area, startAngle, getTotalArcLength(), false, paint);
         //canvas.drawCircle();
         if (value == 0){
