@@ -3,8 +3,11 @@ package test1.nh.com.demos1.customView;
 /**
  * Created by zhengdonghui1 on 15/7/15.
  */
+import android.animation.AnimatorSet;
+import android.animation.FloatEvaluator;
 import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -27,10 +30,11 @@ public class CircleViewPlus extends View {
 
 
 
-    Paint paint,textpaint,progresspaint,roundpaint,s_roundpaint;
+    Paint paint,textpaint,progresspaint,roundpaint,s_roundpaint,textpaint_3digit;
     RectF area;
     String str = "";
-    int value = 0,txt_X = 100,txt_Y = 100;
+    float value=0f;
+    int txt_X = 100,txt_Y = 100;
     float c_x = 0,c_y = 0,radius = 0;
     float s_c_x = 0,s_c_y = 0,s_radius = 13f;
     //LinearGradient shader,progressshader;
@@ -57,7 +61,7 @@ public class CircleViewPlus extends View {
             arcBarColor = a.getColor(R.styleable.CircleViewPlus_arcBarColor, 0xff888888);
             progressBarColor= a.getColor(R.styleable.CircleViewPlus_progressBarColor, 0xff000000);
             progressTextColor= a.getColor(R.styleable.CircleViewPlus_progressTextColor, 0xffffffff);
-            value=a.getInteger(R.styleable.CircleViewPlus_progress, 0);
+            value=a.getFloat(R.styleable.CircleViewPlus_progress, 0);
         } finally {
             // release the TypedArray so that it can be reused.
             a.recycle();
@@ -80,7 +84,7 @@ public class CircleViewPlus extends View {
             arcBarColor = a.getColor(R.styleable.CircleViewPlus_arcBarColor, 0xff888888);
             progressBarColor= a.getColor(R.styleable.CircleViewPlus_progressBarColor, 0xff000000);
             progressTextColor= a.getColor(R.styleable.CircleViewPlus_progressTextColor, 0xffffffff);
-            value=a.getInteger(R.styleable.CircleViewPlus_progress, 0);
+            value=a.getFloat(R.styleable.CircleViewPlus_progress, 0);
         } finally {
             // release the TypedArray so that it can be reused.
             a.recycle();
@@ -96,7 +100,7 @@ public class CircleViewPlus extends View {
         // TODO Auto-generated constructor stub
     }
 
-    public void setProgress(int value){
+    public void setProgress(float value){
         this.value = value;
         resetCircleView();
         invalidate();
@@ -127,11 +131,23 @@ public class CircleViewPlus extends View {
     }
 
     public void animateTo(int percent){
-        final ObjectAnimator animator = ObjectAnimator.ofInt(this, "progress",0, percent);
-        animator.setDuration(3000L);
-        animator.setEvaluator(new IntEvaluator());
-        animator.setInterpolator(new DecelerateInterpolator(1));
-        animator.start();
+//        final ObjectAnimator animator = ObjectAnimator.ofFloat(this, "progress",0f, (float)percent);
+//        animator.setDuration(3000L);
+//        animator.setEvaluator(new FloatEvaluator());
+//        animator.setInterpolator(new DecelerateInterpolator(1));
+//        animator.start();
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, percent);
+        valueAnimator.setStartDelay(100);
+        valueAnimator.setDuration(2000);
+        valueAnimator.setInterpolator(new DecelerateInterpolator(1f));
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                CircleViewPlus.this.setProgress((Float)valueAnimator.getAnimatedValue());
+            }
+        });
+        valueAnimator.start();
     }
 
     public void resetCircleView(){
@@ -170,6 +186,7 @@ public class CircleViewPlus extends View {
 
 
         this.textpaint.setTextSize(s_radius);
+        this.textpaint_3digit.setTextSize(s_radius*0.75f);
 
         this.area = new RectF(viewWidth/2-radius,
                 viewWidth/2-radius,
@@ -211,9 +228,12 @@ public class CircleViewPlus extends View {
 
         textpaint = new Paint();
         textpaint.setTextSize(35f);
+        textpaint_3digit = new Paint();
+        textpaint_3digit.setTextSize(35f);
+
 //        textpaint.setColor(getResources().getColor(R.color.White));// progress indicator text
         textpaint.setColor(progressTextColor);
-
+        textpaint_3digit.setColor(progressTextColor);
 
         area=new RectF(0,0,233,233);
 
@@ -237,14 +257,16 @@ public class CircleViewPlus extends View {
         resetCircleView();
         canvas.drawArc(area, startAngle, getTotalArcLength(), false, paint);
         //canvas.drawCircle();
-        if (value == 0){
-            //canvas.drawArc(area, 120, 0 , false, progresspaint);
+        int value_int=(int)value;
+
+        if (value_int == 0){
+            canvas.drawText(""+value_int+"%", s_c_x-s_radius*(0.6f), s_c_y+s_radius*(0.4f), textpaint);
         }else {
             canvas.drawArc(area, startAngle, value*getTotalArcLength()/100 , false, progresspaint);
             canvas.drawCircle(s_c_x,s_c_y,s_radius,s_roundpaint);  // progress indicator
-            if (value>9) canvas.drawText(""+value+"%", s_c_x-s_radius*(0.85f), s_c_y+s_radius*(0.4f), textpaint); // number on the indicator  -->  the ratio are set to place the number in the middle of the circle
-            else canvas.drawText(""+value+"%", s_c_x-s_radius*(0.6f), s_c_y+s_radius*(0.4f), textpaint);         // number on the indicator  -->  the ratio are set to place the number in the middle of the circle
-            // the ratio depends on the length of the text,
+            if ((value_int>=0)&&(value_int<=9)) canvas.drawText(""+value_int+"%", s_c_x-s_radius*(0.6f), s_c_y+s_radius*(0.4f), textpaint);   // number on the indicator 0-9    -->  the ratio are set to place the number in the middle of the circle
+            if ((value_int>9)&&(value_int<=99)) canvas.drawText(""+value_int+"%", s_c_x-s_radius*(0.85f), s_c_y+s_radius*(0.4f), textpaint); // number on the indicator 10-99  -->  the ratio are set to place the number in the middle of the circle
+            if (value_int>99) canvas.drawText(""+value_int+"%", s_c_x-s_radius*(0.85f), s_c_y+s_radius*(0.3f), textpaint_3digit);                 // number on the indicator >99    -->  the ratio are set to place the number in the middle of the circle
         }
 //        canvas.drawText(str, txt_X, txt_Y, textpaint);
     }

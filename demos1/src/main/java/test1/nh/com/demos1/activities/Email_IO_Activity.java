@@ -124,7 +124,7 @@ public class Email_IO_Activity extends AppCompatActivity {
                 Session session = Session.getInstance(props, new Authenticator() {
                     @Override
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("hcholding_log@163.com", "android_log");  //设置用户名密码
+                        return new PasswordAuthentication("hcholding_log@163.com", "androidlog1");  //设置用户名密码     要使用 pop3授权码: androidlog1，而不是登陆密码 。。。
                     }
                 }); // 获取验证会话
 

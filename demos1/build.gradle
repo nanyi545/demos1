@@ -37,6 +37,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
 }
 
 repositories {
@@ -159,5 +164,10 @@ dependencies {
     compile 'com.lsjwzh:materialloadingprogressbar:0.5.8-RELEASE'// loading animation 2
 
     compile 'com.android.support:multidex:1.0.0'
+
+
+
+    compile 'ch.acra:acra:4.8.5'
+    compile 'com.github.chenupt.android:springindicator:1.0.1@aar'
 
 }

@@ -356,6 +356,14 @@
             android:onClick="jump_keyTest"
             android:text="on key 测试"/>
 
+        <Button
+            android:id="@+id/button48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button47"
+            android:onClick="jump_switch"
+            android:text="switching 测试"/>
+
 
     </RelativeLayout>
 

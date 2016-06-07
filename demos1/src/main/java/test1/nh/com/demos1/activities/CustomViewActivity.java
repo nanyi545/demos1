@@ -2,15 +2,21 @@ package test1.nh.com.demos1.activities;
 
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import test1.nh.com.demos1.R;
 import test1.nh.com.demos1.customView.CircleViewPlus;
@@ -24,6 +30,11 @@ public class CustomViewActivity extends AppCompatActivity {
 
     private CircleViewPlus cvplus;
     private RelativeLayout layout;
+
+    private TextView animateTV;
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,18 +98,45 @@ public class CustomViewActivity extends AppCompatActivity {
 //        cvplus.resetCircleView(layout);
 
 
+        animateTV=(TextView)findViewById(R.id.animate_tv);
+
     }
 
 
+
+
+    public void animateTextView(int initialValue, int finalValue, final TextView  textview) {
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(initialValue, finalValue);
+        valueAnimator.setDuration(1500);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                textview.setText(valueAnimator.getAnimatedValue().toString());
+            }
+        });
+        valueAnimator.start();
+    }
+
+
+    PopupWindow pw;
     @Override
     protected void onResume() {
         super.onResume();
-//        final ObjectAnimator animator = ObjectAnimator.ofInt(cvplus, "progress",3, 77);
-//        animator.setDuration(3000L);
-//        animator.setEvaluator(new IntEvaluator());
-//        animator.setInterpolator(new DecelerateInterpolator(1));
-//        animator.start();
-        cvplus.animateTo(95);
+        cvplus.animateTo(6);
+        animateTextView(0,2000,animateTV);
+
+
+        // dim it ?
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        pw = new PopupWindow(inflater.inflate(R.layout.popup_example, null, false),100,100, true);
+
+    }
+
+    public void showPop(View v){
+        pw.showAtLocation(this.findViewById(R.id.relative_page), Gravity.CENTER, 0, 0);
+        WindowManager.LayoutParams windowManager = getWindow().getAttributes();
+        windowManager.dimAmount = 0.75f;
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
     }
 
 

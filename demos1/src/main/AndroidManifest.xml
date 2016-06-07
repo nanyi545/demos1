@@ -174,7 +174,8 @@
         <activity android:name=".okhttpDemo.OKhttpActivity" />
         <activity android:name=".guavaDest.GuavaTestActivity" />
         <activity android:name=".activities.LoadingTestActivity" />
-        <activity android:name=".activities.KeyEventActivity"></activity>
+        <activity android:name=".activities.KeyEventActivity" />
+        <activity android:name=".activities.WaterSwitchActivity"></activity>
     </application>
 
 </manifest>

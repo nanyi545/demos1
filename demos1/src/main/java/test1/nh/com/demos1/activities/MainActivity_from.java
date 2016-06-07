@@ -461,6 +461,10 @@ public class MainActivity_from extends AppCompatActivity {
     public void jump_keyTest(View view){
         KeyEventActivity.start(this);}
 
+    public void jump_switch(View view){
+        WaterSwitchActivity.start(this);}
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
