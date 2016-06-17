@@ -38,6 +38,17 @@ android {
         }
     }
 
+    productFlavors {
+        sbqq {
+            applicationIdSuffix = ".sbqq"
+        }
+        prod {
+
+        }
+    }
+
+
+
     dexOptions {
         javaMaxHeapSize "4g"
     }
@@ -48,6 +59,7 @@ repositories {
     maven { url "https://jitpack.io" }  ////mpAndroidChart
     jcenter()
 }
+
 
 final DEXMAKER_VERSION = '1.2'
 final RUNNER_VERSION = '0.4'

@@ -44,6 +44,7 @@ import test1.nh.com.demos1.mvpSQL.pack.SQLiteBoilerActivity;
 import test1.nh.com.demos1.okhttpDemo.OKhttpActivity;
 import test1.nh.com.demos1.testDemo.UnitTestWithDIActivity;
 import test1.nh.com.demos1.utils.DMapplication;
+import test1.nh.com.demos1.utils.TextObtainer;
 import test1.nh.com.demos1.utils.images.BitmapUtil;
 import test1.nh.com.demos1.write2disk.Write2diskActivity;
 
@@ -68,10 +69,17 @@ public class MainActivity_from extends AppCompatActivity {
     // 测试AlertDialog  +  测试利用反射修改AlertDialog
     AlertDialog  alertDialog;
 
+    TextView tv1_main;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity_from);
+
+
+        tv1_main=(TextView)findViewById(R.id.textView1);
+        tv1_main.setText(TextObtainer.obtainText());
+
 
         // ---test of actionbar activities---
         Button b_appbar1=(Button)findViewById(R.id.button20);

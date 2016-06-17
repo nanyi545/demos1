@@ -137,9 +137,7 @@ public class DMapplication extends Application {
         // DaggerDiComponent中需要调用 networkApiModule()/obj_Module()  设置module, as above line
         // 如果不设置，像上上行那样，会自动设置module（调用module类的空构造方法）
         // @component中设置了几个module 就需要设置几个module
-
         component1 = DaggerDi3Component.builder().build();
-
         componentData = DaggerDataComponent.builder().build(); // 测试unit test with DI
     }
 }
