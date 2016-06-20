@@ -1,8 +1,12 @@
 package test1.nh.com.demos1.activities.matDesign;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +25,7 @@ public class MatDesignPanelActivity extends AppCompatActivity {
     Button b_outline;
     Button b_vpDemo;
 
+    Button b_transitionDemo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,9 +116,34 @@ public class MatDesignPanelActivity extends AppCompatActivity {
         });
 
 
+        //-----transition ----->
+        setupTransition();
 
+        b_transitionDemo=(Button)findViewById(R.id.button23);
+        b_transitionDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent=new Intent(MatDesignPanelActivity.this,TransitionActivity1.class);
+                transitionTo(mIntent);
+            }
+        });
 
     }
+
+    @TargetApi(21)
+    private void setupTransition(){
+        Slide slide = new Slide();
+        slide.setDuration(1000);
+        getWindow().setExitTransition(slide);
+    }
+
+    @TargetApi(21)
+    void transitionTo(Intent i) {
+        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(this, true);
+        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pairs);
+        startActivity(i, transitionActivityOptions.toBundle());
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

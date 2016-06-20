@@ -175,7 +175,8 @@
         <activity android:name=".guavaDest.GuavaTestActivity" />
         <activity android:name=".activities.LoadingTestActivity" />
         <activity android:name=".activities.KeyEventActivity" />
-        <activity android:name=".activities.WaterSwitchActivity"></activity>
+        <activity android:name=".activities.WaterSwitchActivity" />
+        <activity android:name=".activities.matDesign.TransitionActivity1"></activity>
     </application>
 
 </manifest>

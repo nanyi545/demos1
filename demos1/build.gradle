@@ -40,7 +40,7 @@ android {
 
     productFlavors {
         sbqq {
-            applicationIdSuffix = ".sbqq"
+//            applicationIdSuffix = ".sbqq"
         }
         prod {
 
@@ -50,7 +50,7 @@ android {
 
 
     dexOptions {
-        javaMaxHeapSize "4g"
+        javaMaxHeapSize "1g"
     }
 
 }
