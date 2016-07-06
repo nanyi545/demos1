@@ -473,6 +473,10 @@ public class MainActivity_from extends AppCompatActivity {
         WaterSwitchActivity.start(this);}
 
 
+    public void jump_amap(View view){
+        AmapActivity1.start(this);}
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
