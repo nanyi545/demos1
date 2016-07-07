@@ -6,6 +6,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
+import test1.nh.com.demos1.activities.matDesign.adapter_MD.RecyclerListAdapter;
+
 /**
  * Created by Administrator on 15-11-3.
  * An implementation of {@link ItemTouchHelper.Callback} that enables basic drag & drop and
@@ -67,6 +69,8 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
         // Notify the adapter of the dismissal
         mAdapter.onItemDismiss(viewHolder.getAdapterPosition());
+//        RecyclerListAdapter.ItemViewHolder ivh=(RecyclerListAdapter.ItemViewHolder)viewHolder ;
+//        ivh.textView.setTranslationX(100);
     }
 
     @Override

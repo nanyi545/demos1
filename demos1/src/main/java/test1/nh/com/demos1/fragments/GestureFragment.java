@@ -57,7 +57,7 @@ public class GestureFragment extends Fragment {
                     Log.d("GESTURE", "Action was DOWN");
                     return true;
                 case (MotionEvent.ACTION_MOVE) :
-                    Log.d("GESTURE","Action was MOVE");
+                    Log.d("GESTURE","Action was MOVE  rawX:"+event.getRawX());
                     return true;
                 case (MotionEvent.ACTION_UP) :
                     Log.d("GESTURE","Action was UP");
@@ -89,7 +89,7 @@ public class GestureFragment extends Fragment {
         iv1=(ImageView)rootView.findViewById(R.id.iv_test);
 
         //for detecting common gestures
-//        iv1.setOnTouchListener(viewTouch);
+        iv1.setOnTouchListener(viewTouch);
 
 //Detecting All Supported Gestures------>is in actionbar activity
 // drawer activity can not be used to monitor gesture----->already monitor drawer open/close

@@ -196,7 +196,9 @@
         <activity android:name=".activities.KeyEventActivity" />
         <activity android:name=".activities.WaterSwitchActivity" />
         <activity android:name=".activities.matDesign.TransitionActivity1" />
-        <activity android:name=".activities.AmapActivity1"></activity>
+        <activity android:name=".activities.AmapActivity1" />
+        <activity android:name=".activities.DrawTestActivity" />
+        <activity android:name=".activities.ViewPagerTestActivity"></activity>
     </application>
 
 </manifest>

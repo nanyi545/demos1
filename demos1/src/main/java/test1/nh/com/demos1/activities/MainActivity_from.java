@@ -477,6 +477,13 @@ public class MainActivity_from extends AppCompatActivity {
         AmapActivity1.start(this);}
 
 
+    public void jump_drag(View view){
+        DrawTestActivity.start(this);}
+
+    public void jump_vp_test(View view){
+        ViewPagerTestActivity.start(this);}
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

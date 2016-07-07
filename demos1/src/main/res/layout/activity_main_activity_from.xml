@@ -372,6 +372,24 @@
             android:onClick="jump_amap"
             android:text="amap 测试"/>
 
+        <Button
+            android:id="@+id/button50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button49"
+            android:onClick="jump_drag"
+            android:text="drag 测试"/>
+
+        <Button
+            android:id="@+id/button51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button50"
+            android:onClick="jump_vp_test"
+            android:text="view pager 测试"/>
+
+
+
 
     </RelativeLayout>
 
