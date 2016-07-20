@@ -34,6 +34,7 @@ import java.util.TimeZone;
 
 import test1.nh.com.demos1.R;
 import test1.nh.com.demos1.activities.matDesign.MatDesignPanelActivity;
+import test1.nh.com.demos1.activities.time_picker.TimePickerActivity;
 import test1.nh.com.demos1.activityManagerActivity.ActManagerActivity;
 import test1.nh.com.demos1.audioTest.AudioActivity;
 import test1.nh.com.demos1.broadcastReceiverDemo.BCRActivity;
@@ -482,6 +483,11 @@ public class MainActivity_from extends AppCompatActivity {
 
     public void jump_vp_test(View view){
         ViewPagerTestActivity.start(this);}
+
+
+
+    public void jump_vp_timer_picker(View view){
+        TimePickerActivity.start(this);}
 
 
     @Override

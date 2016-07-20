@@ -42,4 +42,5 @@ public class SeekBarNumericTransformerHelper extends DiscreteSeekBar.NumericTran
 //        return currentTime.get(Calendar.HOUR_OF_DAY)+":"+currentTime.get(Calendar.MINUTE);
 //        return startTime.get(Calendar.MONTH)+"月"+startTime.get(Calendar.DAY_OF_MONTH)+"日\n"+startTime.get(Calendar.HOUR)+":"+startTime.get(Calendar.MINUTE)+":"+startTime.get(Calendar.SECOND);
     }
+
 }

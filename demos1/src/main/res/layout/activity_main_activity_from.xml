@@ -389,6 +389,14 @@
             android:text="view pager 测试"/>
 
 
+        <Button
+            android:id="@+id/button52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button51"
+            android:onClick="jump_vp_timer_picker"
+            android:text="time picker 测试"/>
+
 
 
     </RelativeLayout>

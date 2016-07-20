@@ -27,7 +27,7 @@
             android:gravity="center"
             android:background="@color/Red200"
             android:text="this is a test of card view-------------------------------------"
-             />
+            />
 
     </android.support.v7.widget.CardView>
 

@@ -34,7 +34,6 @@ public class MyRVAdapter4 extends RecyclerView.Adapter<MyRVAdapter4.ViewHolder> 
     }
 
 
-
     private String[] mDataset;
     private Activity context;
 
