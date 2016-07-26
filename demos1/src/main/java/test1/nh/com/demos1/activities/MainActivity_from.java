@@ -490,6 +490,12 @@ public class MainActivity_from extends AppCompatActivity {
         TimePickerActivity.start(this);}
 
 
+    public void jump_webview(View view){
+        WebViewActivity.start(this);}
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

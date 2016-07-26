@@ -199,7 +199,8 @@
         <activity android:name=".activities.AmapActivity1" />
         <activity android:name=".activities.DrawTestActivity" />
         <activity android:name=".activities.ViewPagerTestActivity" />
-        <activity android:name=".activities.time_picker.TimePickerActivity"></activity>
+        <activity android:name=".activities.time_picker.TimePickerActivity" />
+        <activity android:name=".activities.WebViewActivity"></activity>
     </application>
 
 </manifest>
