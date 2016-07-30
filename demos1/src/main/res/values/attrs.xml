@@ -57,6 +57,9 @@
     </declare-styleable>
 
 
+    <declare-styleable name="LoadView">
+        <attr name="loadPercent" format="float" />
+    </declare-styleable>
 
 
 

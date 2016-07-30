@@ -111,6 +111,24 @@
     </RelativeLayout>
 
 
+
+
+    <test1.nh.com.demos1.customView.LoadView
+        android:id="@+id/loadview"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentRight="true"
+        />
+
+
+    <test1.nh.com.demos1.customView.WaveView
+        android:layout_below="@id/ev1"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/wave"
+        />
+
+
     <TextView
         android:layout_width="100dp"
         android:layout_height="50dp"

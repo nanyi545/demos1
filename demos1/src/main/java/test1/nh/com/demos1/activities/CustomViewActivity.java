@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -21,7 +23,9 @@ import android.widget.TextView;
 import test1.nh.com.demos1.R;
 import test1.nh.com.demos1.customView.CircleViewPlus;
 import test1.nh.com.demos1.customView.ExpandView;
+import test1.nh.com.demos1.customView.LoadView;
 import test1.nh.com.demos1.customView.PieChartc;
+import test1.nh.com.demos1.customView.WaveView;
 
 public class CustomViewActivity extends AppCompatActivity {
 
@@ -100,8 +104,24 @@ public class CustomViewActivity extends AppCompatActivity {
 
         animateTV=(TextView)findViewById(R.id.animate_tv);
 
+
+
+        lv1= (LoadView) findViewById(R.id.loadview);
+        lateInit.sendEmptyMessageDelayed(1,1000);
+
+
+        WaveView wa=(WaveView) findViewById(R.id.wave);
+        wa.startWave();
     }
 
+    LoadView lv1;
+    Handler lateInit=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            lv1.animateTo(1f);
+        }
+    };
 
 
 

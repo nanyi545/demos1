@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -26,11 +27,23 @@ public class WebViewActivity extends AppCompatActivity {
     Button button1,button2;
 
 
+    //  JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。
+
     public void loadLocal(View v){
 //        webView.loadUrl("file:///android_asset/www/yellow.html");
 //        webView.loadUrl("file:///android_asset/www/frameset.html");
 //        webView.loadUrl("file:///android_asset/www/tables.html");
-        webView.loadUrl("file:///android_asset/www/fee.html");
+//        webView.loadUrl("file:///android_asset/www/fee.html");
+//        webView.loadUrl("file:///android_asset/www/sample1.html");
+//        webView.loadUrl("file:///android_asset/www/h5sample1.html");
+//        webView.loadUrl("file:///android_asset/www/js1.html");
+//        webView.loadUrl("file:///android_asset/www/js2_button.html");
+//        webView.loadUrl("file:///android_asset/www/js3_change.html");
+//        webView.loadUrl("file:///android_asset/www/js4_light.html");
+//        webView.loadUrl("file:///android_asset/www/js5_change_color.html");
+//        webView.loadUrl("file:///android_asset/www/js6_input.html");
+//        webView.loadUrl("file:///android_asset/www/js7_function.html");
+        webView.loadUrl("file:///android_asset/www/js8_external_function.html");
     }
 
     @Override
@@ -39,12 +52,12 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web_view);
 
         webView= (WebView) findViewById(R.id.my_web_view);
+        webView.setWebChromeClient(new WebChromeClient());  // this is needed to trigger alert !!
         webView.setWebViewClient(new WebViewClient());
 
         // enable JS
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-
 
         editText1= (EditText) findViewById(R.id.path);
         button1= (Button) findViewById(R.id.button1);

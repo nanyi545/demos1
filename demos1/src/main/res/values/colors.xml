@@ -91,6 +91,9 @@
     <color name="RedA200">#ff5177</color>
     <color name="RedA400">#ff2d6f</color>
     <color name="RedA700">#e00032</color>
+
+    <color name="Red400T">#44e84e40</color>
+
     <!-- Material design   Teals -->
     <color name="Teal50">#e0f2f1</color>
     <color name="Teal100">#b2dfdb</color>
@@ -106,6 +109,8 @@
     <color name="TealA200">#64ffda</color>
     <color name="TealA400">#1de9b6</color>
     <color name="TealA700">#00bfa5</color>
+    <color name="Teal400T">#4426a69a</color>
+
     <!-- Material design   Purple -->
     <color name="Purple50">#f3e5f5</color>
     <color name="Purple100">#e1bee7</color>
