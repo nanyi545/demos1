@@ -183,4 +183,7 @@ dependencies {
 
 
     compile "com.daimajia.swipelayout:library:1.2.0@aar"
+
+//    compile 'com.yahoo.mobile.client.android.util.rangeseekbar:rangeseekbar-library:0.1.0'
+
 }

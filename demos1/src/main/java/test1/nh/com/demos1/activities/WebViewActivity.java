@@ -43,7 +43,13 @@ public class WebViewActivity extends AppCompatActivity {
 //        webView.loadUrl("file:///android_asset/www/js5_change_color.html");
 //        webView.loadUrl("file:///android_asset/www/js6_input.html");
 //        webView.loadUrl("file:///android_asset/www/js7_function.html");
-        webView.loadUrl("file:///android_asset/www/js8_external_function.html");
+//        webView.loadUrl("file:///android_asset/www/js8_external_function.html");
+//        webView.loadUrl("file:///android_asset/www/js9_variable.html");
+//        webView.loadUrl("file:///android_asset/www/js10_array.html");
+//        webView.loadUrl("file:///android_asset/www/js11_object.html");
+//        webView.loadUrl("file:///android_asset/www/js12_functions.html");
+        webView.loadUrl("file:///android_asset/www/js13_gettime.html");
+
     }
 
     @Override

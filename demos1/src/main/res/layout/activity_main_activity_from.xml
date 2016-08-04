@@ -406,6 +406,15 @@
             android:text="webview测试"/>
 
 
+        <Button
+            android:id="@+id/button54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button53"
+            android:onClick="jump_seekbar"
+            android:text="range seekbar 测试"/>
+
+
     </RelativeLayout>
 
 </ScrollView>

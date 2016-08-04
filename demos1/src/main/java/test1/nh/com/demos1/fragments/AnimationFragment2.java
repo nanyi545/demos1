@@ -71,6 +71,7 @@ public class AnimationFragment2 extends Fragment {
         });
 
 
+
         // translate animation----View animation+ animator set
         final ImageView iv2= (ImageView) rootView.findViewById(R.id.iv_move);
         Button iv2_move= (Button) rootView.findViewById(R.id.startButton2);

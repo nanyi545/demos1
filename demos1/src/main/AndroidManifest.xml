@@ -200,7 +200,8 @@
         <activity android:name=".activities.DrawTestActivity" />
         <activity android:name=".activities.ViewPagerTestActivity" />
         <activity android:name=".activities.time_picker.TimePickerActivity" />
-        <activity android:name=".activities.WebViewActivity"></activity>
+        <activity android:name=".activities.WebViewActivity" />
+        <activity android:name=".activities.range_seek.RangeSeekbarMainActivity"></activity>
     </application>
 
 </manifest>
