@@ -49,6 +49,13 @@
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prodDebug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prodDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prodDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/apt/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/r/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/aidl/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/buildConfig/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/rs/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/res/rs/androidTest/prod/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/res/resValues/androidTest/prod/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProdDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProdDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProdDebug/assets" type="java-test-resource" />
@@ -57,13 +64,6 @@
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProdDebug/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProdDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProdDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/apt/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/r/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/aidl/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/buildConfig/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/source/rs/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/res/rs/androidTest/prod/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/build/generated/res/resValues/androidTest/prod/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prod/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prod/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prod/assets" type="java-resource" />
@@ -134,6 +134,7 @@
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/bundles" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/dependency-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/exploded-aar/biz.kasual/materialnumberpicker/1.2.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/exploded-aar/ch.acra/acra/4.8.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-core/2.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2/jars" />
@@ -210,6 +211,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="rxbinding-0.3.0" level="project" />
     <orderEntry type="library" exported="" name="activation" level="project" />
+    <orderEntry type="library" exported="" name="materialnumberpicker-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="dagger-2.0" level="project" />
     <orderEntry type="library" exported="" name="acra-4.8.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2" level="project" />

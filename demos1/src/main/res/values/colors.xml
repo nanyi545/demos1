@@ -144,6 +144,19 @@
     <color name="Blue900trans">#112A36B1</color>
     <color name="Blue_">@color/Blue400</color>
 
+    <!-- Material design   gray -->
+    <color name="Gray50">#FAFAFA</color>
+    <color name="Gray100">#F5F5F5</color>
+    <color name="Gray200">#EEEEEE</color>
+    <color name="Gray300">#E0E0E0</color>
+    <color name="Gray400">#BDBDBD</color>
+    <color name="Gray450">#BBBBBB</color>
+    <color name="Gray500">#9E9E9E</color>
+    <color name="Gray600">#757575</color>
+    <color name="Gray700">#616161</color>
+    <color name="Gray800">#424242</color>
+    <color name="Gray900">#212121</color>
+    <color name="Gray200T">#22EEEEEE</color>
 
     <!-- in custom piechart -->
     <color name="seafoam">#ffc6f9e5</color>

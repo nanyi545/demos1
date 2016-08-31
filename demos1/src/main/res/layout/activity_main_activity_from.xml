@@ -414,6 +414,23 @@
             android:onClick="jump_seekbar"
             android:text="range seekbar 测试"/>
 
+        <Button
+            android:id="@+id/button55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button54"
+            android:onClick="jump_test_anim"
+            android:text="property anim 测试"/>
+
+        <Button
+            android:id="@+id/button56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button55"
+            android:onClick="jump_test_time"
+            android:text="select time 测试"/>
+
+
 
     </RelativeLayout>
 
