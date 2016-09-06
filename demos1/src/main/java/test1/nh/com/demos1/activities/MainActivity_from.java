@@ -382,6 +382,10 @@ public class MainActivity_from extends AppCompatActivity {
         Intent i1=new Intent(this,CustomViewActivity.class);
         startActivity(i1);
     }
+    public void jump_tab2(View view){
+        Intent i1=new Intent(this,CustomViewActivity2.class);
+        startActivity(i1);
+    }
 
 
     public void jump_alert(View view){

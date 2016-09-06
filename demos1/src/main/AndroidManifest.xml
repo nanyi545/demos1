@@ -203,7 +203,8 @@
         <activity android:name=".activities.WebViewActivity" />
         <activity android:name=".activities.range_seek.RangeSeekbarMainActivity" />
         <activity android:name=".activities.PropertyAnimTestActivity" />
-        <activity android:name=".activities.selectTime.SelectTimeActivity"></activity>
+        <activity android:name=".activities.selectTime.SelectTimeActivity" />
+        <activity android:name=".activities.CustomViewActivity2"></activity>
     </application>
 
 </manifest>

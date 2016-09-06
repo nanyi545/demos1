@@ -49,6 +49,13 @@
     </declare-styleable>
 
 
+    <declare-styleable name="CustomView">
+        <attr name="border_color1" format="color" />
+        <attr name="border_width1" format="dimension" />
+    </declare-styleable>
+
+
+
     <declare-styleable name="CircleViewPlus">
         <attr name="arcBarColor" format="color" />
         <attr name="progressBarColor" format="color" />
@@ -59,6 +66,12 @@
 
     <declare-styleable name="LoadView">
         <attr name="loadPercent" format="float" />
+        <attr name="loadingBackground" format="reference" />
+        <attr name="loadingImage" format="reference" />
+        <attr name="loadingDirection" format="enum">
+            <enum name="horizontal" value="10"/>
+            <enum name="vertical" value="11"/>
+        </attr>
     </declare-styleable>
 
 

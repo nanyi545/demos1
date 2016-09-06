@@ -1,12 +1,16 @@
 package test1.nh.com.demos1.customView;
 
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
@@ -30,6 +34,10 @@ public class LoadView extends View {
         loadInitValues(context, attrs);
     }
 
+
+
+
+
     private void loadInitValues(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(
                 attrs,
@@ -37,6 +45,10 @@ public class LoadView extends View {
         );
         try {
             ratio=a.getFloat(R.styleable.LoadView_loadPercent, 0);
+            bckGroundRes=a.getResourceId(R.styleable.LoadView_loadingBackground,0);
+            imgRes=a.getResourceId(R.styleable.LoadView_loadingImage,0);
+            loadingDirection=a.getInt(R.styleable.LoadView_loadingDirection,HORIZONTAL_LOADING);
+            Log.i("ccc",""+loadingDirection);
         } finally {
             a.recycle();
         }
@@ -48,15 +60,18 @@ public class LoadView extends View {
     }
 
     boolean bitmapsReady=false;
-    Bitmap star1,star2;
+    int bckGroundRes,imgRes;
+    Bitmap loadingImg, loadingBg;
     float height,width;
-
+    private int loadingDirection;
+    private static final int HORIZONTAL_LOADING=10;
+    private static final int VERTICAL_LOADING=11;
 
     private void loadImages(){
-        star1=getScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.star1),viewWidth);
-        star2=getScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.star2),viewWidth);
-        height=star1.getHeight();
-        width=star2.getWidth();
+        loadingImg =getScaledBitmap(BitmapFactory.decodeResource(getResources(), imgRes),viewWidth);
+        loadingBg =getScaledBitmap(BitmapFactory.decodeResource(getResources(), bckGroundRes),viewWidth);
+        height= loadingImg.getHeight();
+        width= loadingBg.getWidth();
         bitmapsReady=true;
     }
 
@@ -84,6 +99,23 @@ public class LoadView extends View {
 
 
 
+    public static void startLoading(Activity activity){
+        LayoutInflater inflater = activity.getLayoutInflater();
+        View dialoglayout = inflater.inflate(R.layout.layout_load_indicator, null);
+        LoadView loadView= (LoadView) dialoglayout.findViewById(R.id.loadview);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setView(dialoglayout);
+        AlertDialog dialog=builder.create();
+//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        dialog.show();
+        dialog.getWindow().setLayout(300, 300);
+//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadView.animateTo(1);
+    }
+
+
 
     float ratio=0f;
 
@@ -91,17 +123,32 @@ public class LoadView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (!bitmapsReady)loadImages();
-        canvas.save();   //*************
-        //**********-----restrict the drawing area----
-        canvas.clipRect(0,0,width*ratio,height);
-        canvas.drawBitmap(star1,0,0,null);
-        canvas.restore();//*************
+        if (loadingDirection==HORIZONTAL_LOADING) {
+            canvas.save();   //*************
+            //**********-----restrict the drawing area----
+            canvas.clipRect(0, 0, width * ratio, height);
+            canvas.drawBitmap(loadingImg, 0, 0, null);
+            canvas.restore();//*************
 
-        canvas.save();   //*************
-        //**********-----restrict the drawing area----
-        canvas.clipRect(width*ratio,0,width,height);
-        canvas.drawBitmap(star2,0,0,null);
-        canvas.restore();//*************
+            canvas.save();   //*************
+            //**********-----restrict the drawing area----
+            canvas.clipRect(width * ratio, 0, width, height);
+            canvas.drawBitmap(loadingBg, 0, 0, null);
+            canvas.restore();//*************
+        } else if (loadingDirection==VERTICAL_LOADING){
+            canvas.save();   //*************
+            //**********-----restrict the drawing area----
+            canvas.clipRect(0, height*(1-ratio), width , height);
+            canvas.drawBitmap(loadingImg, 0, 0, null);
+            canvas.restore();//*************
+
+            canvas.save();   //*************
+            //**********-----restrict the drawing area----
+            canvas.clipRect(0, 0, width , height*(1-ratio));
+            canvas.drawBitmap(loadingBg, 0, 0, null);
+            canvas.restore();//*************
+
+        }
     }
 
     /**
@@ -118,7 +165,28 @@ public class LoadView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        //Get the width measurement
+        int widthSize = View.resolveSize(getDesiredWidth(), widthMeasureSpec);
+
+        //Get the height measurement
+        int heightSize = View.resolveSize(getDesiredHeight(), heightMeasureSpec);
+
+        //MUST call this to store the measurements
+        setMeasuredDimension(widthSize, heightSize);
+
     }
+
+    private int getDesiredHeight() {
+        return 150;
+    }
+    private int getDesiredWidth() {
+        return 150;
+    }
+
+
+
+
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {

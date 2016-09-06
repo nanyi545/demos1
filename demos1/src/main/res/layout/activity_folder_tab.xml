@@ -114,11 +114,12 @@
 
 
     <test1.nh.com.demos1.customView.LoadView
+        custom:loadingBackground="@drawable/star2"
+        custom:loadingImage="@drawable/star1"
         android:id="@+id/loadview"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_alignParentRight="true"
-        />
+        android:layout_alignParentRight="true" />
 
 
     <test1.nh.com.demos1.customView.WaveView
@@ -149,6 +150,17 @@
         android:layout_alignTop="@+id/ev1"
         android:layout_toRightOf="@+id/Reset"
         android:layout_toEndOf="@+id/Reset" />
+
+
+
+    <test1.nh.com.demos1.customView.CustomView
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/loadview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        custom:border_color1="@color/Amber200"
+        custom:border_width1="1dp"
+        />
 
 
 </RelativeLayout>

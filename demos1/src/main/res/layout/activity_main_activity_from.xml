@@ -157,6 +157,17 @@
 
 
         <Button
+            android:id="@+id/button100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button22"
+            android:layout_toRightOf="@+id/button23"
+            android:onClick="jump_tab2"
+            android:text="costum view test2"/>
+
+
+
+        <Button
             android:id="@+id/button24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

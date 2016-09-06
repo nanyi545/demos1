@@ -53,7 +53,7 @@ public class TimeSelector {
 
             DisplayMetrics dm=new DisplayMetrics();
             activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
-            final int height=(int)(32*dm.density);  //  item height is 32dp
+            final int height=(int)(24 * dm.density);  //  item height is 32dp
             final int helfHeight=height/2;
             Log.i("CCC","height:"+height+"  helfHeight:"+helfHeight+"  dm.density:"+dm.density);
 
@@ -64,14 +64,29 @@ public class TimeSelector {
             dayAdapter=new SelectRVAdapter(getDays(),activity);
             dayRv.setAdapter(dayAdapter);
             dayRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+
+                int currentOffset;
+                int currentCenter=3;
+
                 @Override
-                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {}
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                    if (newState==0) {
+                        int stickToGridAmount = (currentCenter - 3) * height - currentOffset;
+                        Log.i("CCC","stickToGridAmount:"+stickToGridAmount);//  newState 1 START   newState 0 END
+
+                        dayRv.scrollBy(0, stickToGridAmount);
+                    }
+                }
+
+
                 @Override
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
 
 
                     int offset=dayRv.computeVerticalScrollOffset();
-                    Log.i("CCC","offset:"+offset+"  dy:"+dy);
+//                    Log.i("CCC","offset:"+offset+"  dy:"+dy);
+
 
                     int center=3;
 
@@ -82,7 +97,8 @@ public class TimeSelector {
                     }
 
                     dayAdapter.setCenterPosition(center);
-
+                    currentOffset=offset;
+                    currentCenter=center;
 
                 }
             });
@@ -103,7 +119,7 @@ public class TimeSelector {
             tv_confirm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    popupWindow.dismiss();
+                    dayRv.scrollBy(0, height);
                 }
             });
 
