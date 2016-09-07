@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 import test1.nh.com.demos1.R;
@@ -18,6 +20,8 @@ public class CustomViewActivity2 extends AppCompatActivity {
     }
 
 
+    DisplayMetrics dm=new DisplayMetrics();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,8 @@ public class CustomViewActivity2 extends AppCompatActivity {
     }
 
     public void startLoad(View v){
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        Log.i("ccc",""+dm.density+"    "+(75*dm.density));
         LoadView.startLoading(this);
     }
 }

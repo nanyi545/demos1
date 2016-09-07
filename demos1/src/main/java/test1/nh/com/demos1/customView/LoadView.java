@@ -2,12 +2,12 @@ package test1.nh.com.demos1.customView;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -72,6 +72,7 @@ public class LoadView extends View {
         loadingBg =getScaledBitmap(BitmapFactory.decodeResource(getResources(), bckGroundRes),viewWidth);
         height= loadingImg.getHeight();
         width= loadingBg.getWidth();
+        Log.i("ccc","ondraw----    width:"+width+"  height:"+height);
         bitmapsReady=true;
     }
 
@@ -110,9 +111,11 @@ public class LoadView extends View {
 //        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         dialog.show();
-        dialog.getWindow().setLayout(300, 300);
+        dialog.getWindow().setLayout(325, 325);
+
 //        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         loadView.animateTo(1);
+        Log.i("ccc","width:"+loadView.width+"  height:"+loadView.height);
     }
 
 

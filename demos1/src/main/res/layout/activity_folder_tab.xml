@@ -114,6 +114,7 @@
 
 
     <test1.nh.com.demos1.customView.LoadView
+        android:background="@color/Teal500"
         custom:loadingBackground="@drawable/star2"
         custom:loadingImage="@drawable/star1"
         android:id="@+id/loadview"
