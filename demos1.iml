@@ -72,14 +72,6 @@
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prod/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prod/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/prod/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/jni" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTestProd/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTestProd/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTestProd/assets" type="java-test-resource" />
@@ -88,6 +80,14 @@
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTestProd/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTestProd/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTestProd/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/testProd/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/debug/assets" type="java-resource" />
@@ -112,14 +112,6 @@
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/main/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/jni" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTest/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTest/assets" type="java-test-resource" />
@@ -128,6 +120,14 @@
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/demos1/src/androidTest/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/demos1/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/blame" />
       <excludeFolder url="file://$MODULE_DIR$/demos1/build/intermediates/builds" />

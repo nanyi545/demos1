@@ -3,6 +3,7 @@ package test1.nh.com.demos1.customView;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -12,6 +13,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.DecelerateInterpolator;
 
 import test1.nh.com.demos1.R;
@@ -96,6 +98,19 @@ public class LoadView extends View {
         valueAnimator.start();
     }
 
+    public void animateRepeated(){
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 1f);
+        valueAnimator.setDuration(2000);
+        valueAnimator.setRepeatCount(Integer.MAX_VALUE);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                LoadView.this.setProgress((Float)valueAnimator.getAnimatedValue());
+            }
+        });
+        valueAnimator.start();
+    }
+
 
 
 
@@ -117,6 +132,23 @@ public class LoadView extends View {
         loadView.animateTo(1);
         Log.i("ccc","width:"+loadView.width+"  height:"+loadView.height);
     }
+
+
+    public static void startLoading2(Activity activity){
+        LayoutInflater inflater = activity.getLayoutInflater();
+        View dialoglayout = inflater.inflate(R.layout.layout_load_indicator, null);
+        LoadView loadView= (LoadView) dialoglayout.findViewById(R.id.loadview);
+
+
+        final Dialog dialog = new Dialog(activity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(dialoglayout);
+
+        dialog.show();
+        loadView.animateRepeated();
+    }
+
 
 
 
@@ -176,6 +208,7 @@ public class LoadView extends View {
         int heightSize = View.resolveSize(getDesiredHeight(), heightMeasureSpec);
 
         //MUST call this to store the measurements
+        Log.i("ccc","onmeasure: widthSize"+widthSize+"   heightSize:"+heightSize);
         setMeasuredDimension(widthSize, heightSize);
 
     }
