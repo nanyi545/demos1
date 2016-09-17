@@ -204,7 +204,9 @@
         <activity android:name=".activities.range_seek.RangeSeekbarMainActivity" />
         <activity android:name=".activities.PropertyAnimTestActivity" />
         <activity android:name=".activities.selectTime.SelectTimeActivity" />
-        <activity android:name=".activities.CustomViewActivity2"></activity>
+        <activity android:name=".activities.CustomViewActivity2" />
+        <activity android:name=".activities.interactive_chart.InteractiveActivity" />
+        <activity android:name=".activities.horizontalScroll.HorizontalScrollActivity"></activity>
     </application>
 
 </manifest>

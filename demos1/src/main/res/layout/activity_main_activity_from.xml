@@ -442,6 +442,23 @@
             android:text="select time 测试"/>
 
 
+        <Button
+            android:id="@+id/button57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button56"
+            android:onClick="jump_test_interactive"
+            android:text="interactive测试"/>
+
+
+        <Button
+            android:id="@+id/button58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button57"
+            android:onClick="jump_h_scroll"
+            android:text="水平滚动测试"/>
+
 
     </RelativeLayout>
 

@@ -205,4 +205,6 @@ public class PlayAreaView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         return gestures.onTouchEvent(event);
     }
+
+
 }
