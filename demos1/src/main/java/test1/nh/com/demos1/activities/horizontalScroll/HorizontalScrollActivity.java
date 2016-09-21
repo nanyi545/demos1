@@ -43,6 +43,7 @@ public class HorizontalScrollActivity extends AppCompatActivity {
 
 
 
+        runner=new ScrollerRun();
         scrollToBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,12 +59,16 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         scrollByBtn_anim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ScrollerRun().startScroll();// scroll with animation
+//                new ScrollerRun().startScroll();// scroll with animation
+                runner.startScroll();
             }
         });
 
 
     }
+
+
+    ScrollerRun runner;
 
 
     private class ScrollerRun implements Runnable{
@@ -73,18 +78,16 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         Scroller myscroller;
         public ScrollerRun() {
             this.myscroller=new Scroller(HorizontalScrollActivity.this);
-            myscroller.startScroll(layout.getScrollX(), layout.getScrollY(), -60, -100,1500);
+
         }
 
 
 
         void startScroll(){
-
+            myscroller.startScroll(layout.getScrollX(), layout.getScrollY(), -60, -100,5000);
             int initialX = layout.getScrollX();
-
             lastX = initialX;
             layout.post(this);
-
         }
 
         @Override
@@ -93,6 +96,12 @@ public class HorizontalScrollActivity extends AppCompatActivity {
                 Log.i("ccc", "scroller is finished, done with fling");
                 return;
             }
+
+//            try {
+//                Thread.sleep(500);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 
             boolean more = myscroller.computeScrollOffset();
             int x = myscroller.getCurrX();
