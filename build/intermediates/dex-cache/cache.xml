@@ -1,3 +1,362 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-design-23.4.0_a7c0cb493a27a9192359fd0842267c3ca1e3b954\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.facebook.rebound\rebound\0.3.8\c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e\rebound-0.3.8.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\rebound-0.3.8_8faed4ee327af2f2069aecc89b34ba56fc6e13e5\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.github.d-max\spots-dialog\0.4\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f82b3f786bf4937ed1a1cc9a9a811e154813ba9a">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.github.d-max-spots-dialog-0.4_78debee76aaf70ce795dfa81d84bf40e7ea4b475\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_e63732ec84396374327d6a57e04fe8fd0c908dc9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.1.5\34b9f39e5343d39e205fb7617e734601dc4868e7\MPAndroidChart-v2.1.5.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="34b9f39e5343d39e205fb7617e734601dc4868e7">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\MPAndroidChart-v2.1.5_b97979f6ae14439cc4d0da04f1ea9447b91c039f\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\pl.droidsonroids.gif\android-gif-drawable\1.1.7\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d6825a79ca6c134dd6f26fc15eff443b5215dbdc">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\pl.droidsonroids.gif-android-gif-drawable-1.1.7_8b22cc38a25ce0b64423d5b6dce82f0e97c101c4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.0\748f0546d5c3c27f1aef07270ffea0c45f0c42a4\rxjava-1.1.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\rxjava-1.1.0_9ded10b0fe2f1a9a5f14f6e730e16e0cf268e846\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\additionnal.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\additionnal_1b259aa1217231545236274d58ff1a7088b14271\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\mail.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\mail_6ff9d01ad2aa2f7b663f6596952637c1faeab922\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\picasso-2.5.2_d560df3458986d4b221f181faf8e75ab3d8e80f6\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\internal_impl-23.4.0_538966409c054ddabbab044c2c65a0b0d8a3331f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.17\f417d7f776d1ee5858fc04d9362aa45e9bedd26b\library-1.0.17.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f417d7f776d1ee5858fc04d9362aa45e9bedd26b">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\library-1.0.17_01ba1130510e6fa3f5ea316fe4cc44939285d646\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_214ed3dce91c3291276890529c0384192b68a673\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-cardview-v7-23.4.0_727b5aa9a0c3bfee6619aa2de7ddb0c62df7289a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\okhttp-3.2.0_6c34002cb9bcd291f1c51d4bd9b78f99fcd2169d\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-support-v4-23.4.0_55c74c3c6013cc95cbb56e8fbbd2eb5bee0b98aa\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\commons-email-1.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3b3c527990f7f288a3a9b23a8c7307bbf7e75965">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\commons-email-1.4_1f5ee079dcc30a14c0ac52260a09b3eccb322031\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-library\1.3\4785a3c21320980282f9f33d0d1264a69040538f\hamcrest-library-1.3.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4785a3c21320980282f9f33d0d1264a69040538f">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\hamcrest-library-1.3_3b28db64b8aca9ac4e87f689b6f86192867e4c13\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.google.dagger\dagger\2.0\da7ba0ee1d30edd955da276cdf01d3d7cb24aedc\dagger-2.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="da7ba0ee1d30edd955da276cdf01d3d7cb24aedc">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\dagger-2.0_3ca125923c76dcbb000cc7f6ed5eaa78e77541df\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_a126081d45141be8270158ed69c04744fcdba15b\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.daimajia.swipelayout\library\1.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e84b30031d4bab89a2b5c45af4eb9213828524dd">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.daimajia.swipelayout-library-1.2.0_97003f8d8bdc9c79046b849e837455989c377379\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.wnafee\vector-compat\1.0.5\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="efb6c83d14996769c65f060f81cbb5ab1f64ca75">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.wnafee-vector-compat-1.0.5_072670efe8d11400f8a3be1d2058b703471333cc\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.github.chenupt.android\springindicator\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9cac579415c3b565642abd9fb9e45ef5bdf9a1a0">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.github.chenupt.android-springindicator-1.0.1_d3ef0609ef2a3f3a48131d066bc3a301a872300f\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\activation.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\activation_5e420637bd4f8dad9f2d29ba3b15daef22f9e735\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\commons-math3-3.6.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="825c90790e83af784be1de0a3f3a9f066cf884b9">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\commons-math3-3.6_d5fbd39ccf95b67de23a896aea7a63f8b1b0a18d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\hamcrest-core-1.3_769308f56f66d030a5526a83ca340acec3ba7687\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\guava-18.0_c0829bda3e7ae2f18325acb2172241f5fcc873e1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-core\1.10.19\e8546f5bef4e061d8dd73895b4e8f40e3fe6effe\mockito-core-1.10.19.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e8546f5bef4e061d8dd73895b4e8f40e3fe6effe">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\mockito-core-1.10.19_3456444cb70a6f047093ad5b3ecd8fe0ea6298e1\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-multidex-1.0.1_0c170eca0aec12e019f95e37346076e0c179e8ea\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\io.reactivex-rxandroid-1.1.0_6d94c1722356eb44a17c41a4a54d62c0e9343939\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\javax.inject-1_55d9831bc3f1da6652f714177b399636b6c13b3f\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_6be4d706e7f702f9e5a02613ab6eac7045accbe8\classes.dex" />
+    </item>
+    <item
+        jar="D:\android\aaa\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\support-annotations-23.4.0_daef5553687b52e2c6110c5d44ce845946c136fa\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\AMap_Location_V2.6.0_20160628.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="efc1d37e992c7e1e092e6970730e8cbfe699167d">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\AMap_Location_V2.6.0_20160628_37f8a8dabf614a1ebf20563e351af497d81df4f7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\okio-1.6.0_56bb29e249fef2da2af435654a23162f487e6ef8\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\biz.kasual\materialnumberpicker\1.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="927f6a0e55849a056f0d573a3db63de481381140">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\biz.kasual-materialnumberpicker-1.2.1_ec667cc7d628daf52acdd2c5b31ef59e3ef5906f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\eventbus-2.4.0_05a516f5e3c00ca7419c8ca28c63883134c6dd35\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.7.3\92568d7167ce1bf9eb1fd815b022d5a2c113547a\jsoup-1.7.3.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="92568d7167ce1bf9eb1fd815b022d5a2c113547a">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\jsoup-1.7.3_12a03eebe8654bc23b792a11ac7203e70c66003e\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\ApiStoreSDK1.0.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8335720193fc5e8c58b8b0bdb039cbfaf4fa0610">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\ApiStoreSDK1.0.2_75eae69e2c38318248ce1c51d13b5249dbcbd4b5\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\incremental-runtime-classes\prod\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f1f95e06c699ff73667907f34d469d5a6cfec634">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\instant-run_dc78f4a34354bb5c11469a7e3f582f8d93267f8c\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\ch.acra\acra\4.8.5\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="553933c766d5b677a7640ce2616577bfade1071e">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\ch.acra-acra-4.8.5_a5c55c46addcc19cab9d8fb9400607ad78f221f6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\butterknife-7.0.1_079c17b330ebcbd516a40c4cd0d1ba427d0f55aa\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\org.adw.library\discrete-seekbar\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7be042dd2aa8157a2b63934902f472952d2ea1fe">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\org.adw.library-discrete-seekbar-1.0.1_167d0f707fe2110de73d30af5d1d83fc9ba3490d\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\incremental-classes\prod\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6417bbe489ac222fe7851f9389addb6bb90663e7">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\instant-run-bootstrap_d285b5bbd10a1d9058b2ff537c7492af330c94c9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Documents and Settings\Administrator\.gradle\caches\modules-2\files-2.1\org.objenesis\objenesis\2.1\87c0ea803b69252868d09308b4618f766f135a96\objenesis-2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="87c0ea803b69252868d09308b4618f766f135a96">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\objenesis-2.1_9759dc1b64ca21f0faf7e655fd3cf9a66b3cefb9\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.github.traex.rippleeffect\library\1.2.3\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0a4207597233f779fc933633711517b53ae84d29">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.github.traex.rippleeffect-library-1.2.3_2ea030f1a151bc6435f1a5fb3fc00653a42b4889\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\libs\commons-io-2.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\2\commons-io-2.4_dfc37ca6349448c0585f1753014ef960302e125e\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.android.support\palette-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="51518e8e8f97c314a243d9def0ded91d385b6a1e">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.android.support-palette-v7-23.4.0_35e9c0f316877bb437bcc7db0030850c9e2ce383\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.jakewharton.rxbinding\rxbinding-appcompat-v7\0.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c2ee7a8a35064b507c1f4576034cdea474561bcd">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.jakewharton.rxbinding-rxbinding-appcompat-v7-0.3.0_e5fb5ccd6470c6554f45934f49567ba2bc6a9985\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.jakewharton.rxbinding\rxbinding\0.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="023a79c3bbea624387e820cb2b4d5c6ba774903c">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.jakewharton.rxbinding-rxbinding-0.3.0_89635663e5df7178f1327fb235e9a89005363e3c\classes.dex" />
+    </item>
+    <item
+        jar="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\exploded-aar\com.lsjwzh\materialloadingprogressbar\0.5.8-RELEASE\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="02a43b4e0f1fc04fd60a3de8f6d5015d93703b3e">
+        <dex dex="D:\ASprojects\station_2_23\station_2_23\demos1\build\intermediates\transforms\dex\prod\debug\folders\1000\10\com.lsjwzh-materialloadingprogressbar-0.5.8-RELEASE_e39014a1bffbf14acffe52d0234213d7695bae09\classes.dex" />
+    </item>
+
+</items>

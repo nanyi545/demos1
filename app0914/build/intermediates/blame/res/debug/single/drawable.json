@@ -48,12 +48,12 @@
         "source": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\src\\main\\res\\drawable\\ic_timeline_default_marker.xml"
     },
     {
-        "merged": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_xml_pop_menu.xml",
-        "source": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\src\\main\\res\\drawable\\bg_xml_pop_menu.xml"
-    },
-    {
         "merged": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\snackbar_background.xml",
         "source": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\drawable\\snackbar_background.xml"
+    },
+    {
+        "merged": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_xml_pop_menu.xml",
+        "source": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\src\\main\\res\\drawable\\bg_xml_pop_menu.xml"
     },
     {
         "merged": "D:\\ASprojects\\station_2_23\\station_2_23\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\cornered_background_blue.xml",

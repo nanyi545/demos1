@@ -127,6 +127,14 @@
         android:text="scroll_to"
         />
 
+    <Button
+        android:layout_below="@+id/v_scroller"
+        android:layout_toRightOf="@+id/btn_scroll_to"
+        android:id="@+id/btn_scroll_by_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scroll_by_anim"
+        />
 
 
 
