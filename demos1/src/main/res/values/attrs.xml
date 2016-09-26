@@ -94,4 +94,23 @@
         <attr name="gridColor" format="color" />
     </declare-styleable>
 
+
+
+    <declare-styleable name="NumberPicker">
+        <attr name="textColorHighLight" format="color" />
+        <attr name="textColorNormal" format="color" />
+        <attr name="textSizeHighLight" format="float|dimension" />
+        <attr name="textSizeNormal" format="float|dimension" />
+        <attr name="startNumber" format="integer" />
+        <attr name="endNumber" format="integer" />
+        <attr name="currentNumber" format="integer" />
+        <attr name="verticalSpacing" format="dimension" />
+        <attr name="flagText" format="string|reference" />
+        <attr name="flagTextSize" format="dimension" />
+        <attr name="flagTextColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="lines" format="integer" />
+    </declare-styleable>
+
+
 </resources>

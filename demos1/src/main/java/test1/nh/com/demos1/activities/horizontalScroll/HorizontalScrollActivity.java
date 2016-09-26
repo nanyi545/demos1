@@ -53,7 +53,7 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         scrollByBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layout.scrollBy(-60, 0);// scroll with out animation
+                layout.scrollBy(-60, -100);// scroll with out animation
             }
         });
         scrollByBtn_anim.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +73,7 @@ public class HorizontalScrollActivity extends AppCompatActivity {
 
     private class ScrollerRun implements Runnable{
 
-        private int lastX = 0;
+        private int lastX,lastY = 0;
 
         Scroller myscroller;
         public ScrollerRun() {
@@ -87,13 +87,14 @@ public class HorizontalScrollActivity extends AppCompatActivity {
             myscroller.startScroll(layout.getScrollX(), layout.getScrollY(), -60, -100,5000);
             int initialX = layout.getScrollX();
             lastX = initialX;
+            lastY =layout.getScrollY();
             layout.post(this);
         }
 
         @Override
         public void run() {
             if (myscroller.isFinished()) {
-                Log.i("ccc", "scroller is finished, done with fling");
+                Log.i("ccc", "scroller is finished, done with scrolling");
                 return;
             }
 
@@ -105,11 +106,21 @@ public class HorizontalScrollActivity extends AppCompatActivity {
 
             boolean more = myscroller.computeScrollOffset();
             int x = myscroller.getCurrX();
-            int diff = lastX - x;
+            int diff = x-lastX;
+
+            int y=myscroller.getCurrY();
+            int diffY = y-lastY;
+
             if (diff != 0) {
                 layout.scrollBy(diff, 0);
                 lastX = x;
             }
+
+            if (diffY != 0) {
+                layout.scrollBy(0, diffY);
+                lastY = y;
+            }
+
 
             if (more) {
                 layout.post(this);

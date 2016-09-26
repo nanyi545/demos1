@@ -106,8 +106,8 @@ public class HorizontalScroller extends ViewGroup {
                 float scrollByStart = deltaX;
                 if (getScrollX() - deltaX < leftBorder) {
                     // when try to scroll beyond start
-                    scrollByStart = getScrollX()-leftBorder;
-//                    scrollByStart = deltaX/3;
+//                    scrollByStart = getScrollX()-leftBorder;
+                    scrollByStart = deltaX/3;
 
                 } else if (getScrollX() + getWidth() - deltaX > rightBorder) {
                     // when try to scroll beyond right-end
@@ -118,8 +118,8 @@ public class HorizontalScroller extends ViewGroup {
                 scrollBy((int) -scrollByStart, 0);
                 Log.i("ccc","onTouchEvent-ACTION_MOVE   xTouch:"+xTouch+"    ------  getScrollX:"+getScrollX() +"----- deltaX:"+deltaX );
                 //    event.getX()  : position of the touch event ...
-                //    getScrollX()  : total scroll of the view
-                //    deltaX  :  scroll left --> minus        scroll right --> plus
+                //    getScrollX()  : total scroll of the view     left-->plus,  right-->minus
+                //    deltaX  :  scroll left --> minus      scroll right --> plus
 
                 break;
             case MotionEvent.ACTION_UP:
@@ -129,22 +129,22 @@ public class HorizontalScroller extends ViewGroup {
 //                int dx = targetIndex * getWidth() - getScrollX();
 
                 //-- separate scroll
-                int targetIndex = (getScrollX() +  400 / 2) / 400;
-//                //如果超过右边界，则回弹到最后一个View
-//                if (targetIndex>getChildCount()-1){
-//                    targetIndex = getChildCount()-1;
-//                    //如果超过左边界，则回弹到第一个View
-//                }else if (targetIndex<0){
-//                    targetIndex =0;
-//                }
+                int targetIndex = (getScrollX() +  itemWidth / 2) / itemWidth;
+                //如果超过右边界，则回弹到最后一个View
+                if (targetIndex>getChildCount()-2){
+                    targetIndex = getChildCount()-2;
+                    //如果超过左边界，则回弹到第一个View
+                }else if (targetIndex<0){
+                    targetIndex =0;
+                }
 
-                int dx = targetIndex * 400 - getScrollX();
+                int dx = targetIndex * itemWidth - getScrollX();
 
 
                 //  ---scroll to with out animation
 //                scrollTo(getScrollX()+dx,0);
                 // ---use scroller, scroll with animation ---init scroller ...
-                mScroller.startScroll(getScrollX(), 0, dx, 0);
+                mScroller.startScroll(getScrollX(), 0, dx, 0,400);
                 invalidate();
 
                 Log.i("ccc","onTouchEvent-ACTION_UP");
@@ -165,8 +165,10 @@ public class HorizontalScroller extends ViewGroup {
     //  invalidate() method will call this ...// which is am empty function in the superclass
     @Override
     public void computeScroll() {
+        Log.i("ccc","--on computeScroll---");
         // 第三步，重写computeScroll()方法，在其内部调用scrollTo或ScrollBy方法，完成滑动过程
         if (mScroller.computeScrollOffset()) {
+            Log.i("ccc","to x:"+mScroller.getCurrX()+"  to y:"+mScroller.getCurrY()+"----in:"+Thread.currentThread().getName());
             scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
             postInvalidate();
         }
@@ -185,6 +187,9 @@ public class HorizontalScroller extends ViewGroup {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+
+    int itemWidth;
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         Log.i("ccc","changed:"+changed+"    getChildCount():"+getChildCount());
@@ -192,6 +197,8 @@ public class HorizontalScroller extends ViewGroup {
             int childCount = getChildCount();
             for (int i = 0; i < childCount; i++) {
                 View childView = getChildAt(i);
+                itemWidth=childView.getMeasuredWidth();
+
                 // 在水平方向上对子控件进行布局
 //                childView.layout(i * getMeasuredWidth(), 0, i * getMeasuredWidth()+childView.getMeasuredWidth()+getPaddingLeft(), childView.getMeasuredHeight());
                 //-------
@@ -201,7 +208,7 @@ public class HorizontalScroller extends ViewGroup {
             // 初始化左右边界值
             leftBorder = 0;
 //            rightBorder = getChildCount()*getMeasuredWidth();
-            rightBorder = getChildCount()*400;
+            rightBorder = getChildCount()*itemWidth;
         }
     }
 }
