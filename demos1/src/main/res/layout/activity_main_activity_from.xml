@@ -459,6 +459,14 @@
             android:onClick="jump_h_scroll"
             android:text="水平滚动测试"/>
 
+        <Button
+            android:id="@+id/button59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button58"
+            android:onClick="jump_test3d_scroll"
+            android:text="3d canvas 测试"/>
+
 
     </RelativeLayout>
 

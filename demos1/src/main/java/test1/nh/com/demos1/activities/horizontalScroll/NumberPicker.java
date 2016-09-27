@@ -425,14 +425,6 @@ public class NumberPicker extends View {
                 }
 
 
-                canvas.save();
-
-
-                matrix = canvas.getMatrix();
-                camera.rotateY(45);
-                camera.getMatrix(matrix);
-                matrix.preTranslate(30, 100);
-                canvas.setMatrix(matrix);
 
                 canvas.drawText(
                         text,
@@ -440,8 +432,6 @@ public class NumberPicker extends View {
                         mTextYAxisArray[i].mmPos + mTextBoundsNormal.height() / 2,
                         mTextPaintNormal);
 
-
-                canvas.restore();
             }
         }
 

@@ -256,16 +256,16 @@
         "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\selector_bn_confirm.xml"
     },
     {
-        "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\wp_header.jpg",
         "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\wp_header.jpg"
     },
     {
         "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\divider_simple_1.xml",
         "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\divider_simple_1.xml"
+    },
+    {
+        "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\bn_bg_open_defence_unpressed.xml",
@@ -316,12 +316,12 @@
         "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\bg_monitor_dim_1.xml"
     },
     {
-        "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\chatto_bg.xml",
-        "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\chatto_bg.xml"
-    },
-    {
         "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_xml_mutual_head_back.xml",
         "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\bg_xml_mutual_head_back.xml"
+    },
+    {
+        "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\chatto_bg.xml",
+        "source": "D:\\asprojects\\demos\\demos1\\app0914\\src\\main\\res\\drawable\\chatto_bg.xml"
     },
     {
         "merged": "D:\\asprojects\\demos\\demos1\\app0914\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_xml_mutual_userlist_openvideo.xml",

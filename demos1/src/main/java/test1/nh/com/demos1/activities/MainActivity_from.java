@@ -38,6 +38,7 @@ import test1.nh.com.demos1.activities.interactive_chart.InteractiveActivity;
 import test1.nh.com.demos1.activities.matDesign.MatDesignPanelActivity;
 import test1.nh.com.demos1.activities.range_seek.RangeSeekbarMainActivity;
 import test1.nh.com.demos1.activities.selectTime.SelectTimeActivity;
+import test1.nh.com.demos1.activities.test3d.Test3dActivity;
 import test1.nh.com.demos1.activities.time_picker.TimePickerActivity;
 import test1.nh.com.demos1.activityManagerActivity.ActManagerActivity;
 import test1.nh.com.demos1.audioTest.AudioActivity;
@@ -517,6 +518,9 @@ public class MainActivity_from extends AppCompatActivity {
 
     public void jump_h_scroll(View view){
         HorizontalScrollActivity.start(this);}
+
+    public void jump_test3d_scroll(View view){
+        Test3dActivity.start(this);}
 
 
     @Override

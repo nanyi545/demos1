@@ -26,7 +26,6 @@
     <application
         android:name=".utils.DMapplication"
         android:allowBackup="true"
-        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
@@ -206,7 +205,8 @@
         <activity android:name=".activities.selectTime.SelectTimeActivity" />
         <activity android:name=".activities.CustomViewActivity2" />
         <activity android:name=".activities.interactive_chart.InteractiveActivity" />
-        <activity android:name=".activities.horizontalScroll.HorizontalScrollActivity"></activity>
+        <activity android:name=".activities.horizontalScroll.HorizontalScrollActivity" />
+        <activity android:name=".activities.test3d.Test3dActivity"></activity>
     </application>
 
 </manifest>
