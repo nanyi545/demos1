@@ -14,6 +14,7 @@ import android.graphics.Shader;
 import android.support.v4.view.ViewConfigurationCompat;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -402,7 +403,7 @@ public class NumberPicker extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         //绘制背景
-        canvas.drawColor(mBackgroundColor);
+//        canvas.drawColor(mBackgroundColor);
 
         //绘制两条选中数上下的边条
         canvas.drawLine(0, mHighLightRect.top, mWidth, mHighLightRect.top, mLinePaint);
@@ -425,12 +426,20 @@ public class NumberPicker extends View {
                 }
 
 
+//                canvas.save();
+//                camera.save();
+//                camera.translate(0, 0, 0);
+//                camera.rotate((i-4)*10, 0, 0);
+//                camera.getMatrix(matrix);
+//                //绕(curX,curY)变换
+//                matrix.preTranslate(-mWidth / 2, -(mTextYAxisArray[i].mmPos + mTextBoundsNormal.height() / 2));  // so that the rotation happens arround the point 50,50
+//                matrix.postTranslate(mWidth / 2,mTextYAxisArray[i].mmPos + mTextBoundsNormal.height() / 2);
+//                camera.restore();
+//                canvas.concat(matrix);
 
-                canvas.drawText(
-                        text,
-                        mWidth / 2,
-                        mTextYAxisArray[i].mmPos + mTextBoundsNormal.height() / 2,
-                        mTextPaintNormal);
+                canvas.drawText(text, mWidth / 2, mTextYAxisArray[i].mmPos + mTextBoundsNormal.height() / 2, mTextPaintNormal);
+
+//                canvas.restore();
 
             }
         }

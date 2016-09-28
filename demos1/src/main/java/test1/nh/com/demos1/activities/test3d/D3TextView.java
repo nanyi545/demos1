@@ -61,7 +61,7 @@ public class D3TextView extends View {
     }
 
     private int getDesiredHeight() {
-        return 550;
+        return 200;
     }
     private int getDesiredWidth() {
         return 350;
@@ -80,26 +80,40 @@ public class D3TextView extends View {
 
 
         canvas.save();
-
         camera.save();
         camera.translate(0, 0, 0);
-        camera.rotate(60, 0, 0);
+        camera.rotate(0, 0, 45);
         camera.getMatrix(matrix);
         //绕(curX,curY)变换
-        matrix.preTranslate(-50, -50);
+//        matrix.preTranslate(-50, -50);
+//        matrix.postTranslate(50,50);
+        camera.restore();
+        canvas.concat(matrix);
+        mTextPaintNormal.setColor(Color.RED);
+        canvas.drawText("center", 50, 50, mTextPaintNormal);
+        canvas.restore();
+
+
+        canvas.save();
+        camera.save();
+        camera.translate(0, 0, 0);
+        camera.rotate(0, 0, 45);
+        camera.getMatrix(matrix);
+        //绕(curX,curY)变换
+        matrix.preTranslate(-50, -50);  // so that the rotation happens arround the point 50,50
         matrix.postTranslate(50,50);
         camera.restore();
         canvas.concat(matrix);
-
+        mTextPaintNormal.setColor(Color.BLUE);
         canvas.drawText("center", 50, 50, mTextPaintNormal);
-
         canvas.restore();
 
+
+
+        mTextPaintNormal.setColor(Color.GREEN);
+//        canvas.drawText("center", 50, 50, mTextPaintNormal);
         canvas.drawText("bottom", 50, 100, mTextPaintNormal);
-
-
-
-
+        canvas.drawText("bottom2", 50, 150, mTextPaintNormal);
 
     }
 }
