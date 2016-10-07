@@ -139,8 +139,8 @@
     <test1.nh.com.demos1.activities.horizontalScroll.NumberPicker
         android:layout_below="@+id/btn_scroll_by"
         android:id="@+id/day_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:backgroundColor="@color/Teal600"
         app:flagText="asdasd"
         app:flagTextSize="30dp"
@@ -150,12 +150,64 @@
         app:currentNumber="11"
         app:textColorNormal="#000000"
         app:textSizeHighLight="24dp"
-        app:textColorHighLight="#abcdef"
-        app:textSizeNormal="22dp"
-        app:verticalSpacing="50dp"
+        app:textColorHighLight="@color/Purple400"
+        app:textSizeNormal="6dp"
+        app:verticalSpacing="0dp"
         app:lines="5" />
 
+    <!--app:textSize="20.1sp"-->
+    <!--app:heightAdjustment="1.5"-->
+    <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
+        app:textSize="16sp"
+        app:selectedItemIndex="1"
+        app:selectionIndicator="rect"
+        app:itemCountHalf="2"
+        android:background="#FFFFFF"
+        android:layout_toRightOf="@+id/day_picker"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/btn_scroll_by"
+        android:id="@+id/test_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
+    <TextView
+        android:layout_below="@+id/test_picker"
+        android:layout_toRightOf="@+id/time_picker"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20sp"
+        android:onClick="changeFormatter"
+        />
+
+
+
+
+    <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
+        android:padding="10dp"
+        app:textSize="18sp"
+        app:selectionIndicator="rect"
+        app:itemCountHalf="3"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/test_picker"
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
+        android:padding="10dp"
+        app:textSize="18sp"
+        app:selectionIndicator="round_rect"
+        app:itemCountHalf="3"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/test_picker"
+        android:layout_toRightOf="@+id/date_picker"
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
 
 </RelativeLayout>

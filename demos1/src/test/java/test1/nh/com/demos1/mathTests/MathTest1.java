@@ -34,6 +34,19 @@ public class MathTest1 {
     }
 
 
+    @Test
+    public void test3(){
+        double a=Math.sin(Math.PI*30/180);
+        System.out.println("   "+a+"    "+Math.PI);
+    }
+    @Test
+    public void test4(){
+        int a=30%50;
+        int b=-20%50;
+        int c=-70%50;
+        System.out.println("   "+a+"    "+b+"    "+c);
+    }
+
 
 
 

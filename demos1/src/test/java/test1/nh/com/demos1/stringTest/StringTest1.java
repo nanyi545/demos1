@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import test1.nh.com.demos1.activities.horizontalScroll.ItemPicker;
+
 /**
  * Created by Administrator on 15-12-30.
  */
@@ -60,6 +62,13 @@ public class StringTest1 {
             System.out.println("string:"+a+":"+strs[a]);
             System.out.println("int:"+a+":"+temp);
         }
+    }
+
+    @Test
+    public void test6(){
+        ItemPicker.Formatter formatter=new ItemPicker.DateFormatter();
+        System.out.println(formatter.format(1));
+        System.out.println(formatter.format(4));
     }
 
 

@@ -198,7 +198,7 @@
     <color name="login_bn_BlueGrey300">#90A4AE</color>
 
     <!-- -->
-    <color name="Transparent">#00000000</color>
+    <color name="Transparent">#00FFFFFF</color>
     <color name="Bg_semi_1">#CCFFF176</color>
 
     <!-- monitor -->

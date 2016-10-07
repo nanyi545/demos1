@@ -113,4 +113,21 @@
     </declare-styleable>
 
 
+    <declare-styleable name="ItemPicker">
+        <attr name="textSize" format="dimension" />
+        <attr name="heightAdjustment" format="float" />
+        <attr name="focalPoint" format="float" />
+        <attr name="selectedItemIndex" format="integer" />
+        <attr name="itemCountHalf" format="integer" />
+        <attr name="selectionIndicatorColor" format="color" />
+        <attr name="selectionIndicator" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="rect" value="1"/>
+            <enum name="single_line" value="2"/>
+            <enum name="double_line" value="3"/>
+            <enum name="round_rect" value="4"/>
+        </attr>
+
+    </declare-styleable>
+
 </resources>

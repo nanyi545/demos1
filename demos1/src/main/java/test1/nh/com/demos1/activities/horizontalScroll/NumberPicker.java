@@ -403,7 +403,7 @@ public class NumberPicker extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         //绘制背景
-//        canvas.drawColor(mBackgroundColor);
+        canvas.drawColor(mBackgroundColor);
 
         //绘制两条选中数上下的边条
         canvas.drawLine(0, mHighLightRect.top, mWidth, mHighLightRect.top, mLinePaint);
@@ -453,6 +453,13 @@ public class NumberPicker extends View {
         if (MotionEvent.ACTION_UP == mTouchAction && mFlingScroller.isFinished()) {
             adjustYPosition();
         }
+
+
+//        Paint p=new Paint();
+//        p.setColor(Color.rgb(120,0,0));
+//        canvas.drawRect(mHighLightRect,p);  //  mHighLightRect  selected item rect in the middle...
+
+
     }
 
     /**

@@ -3,6 +3,8 @@ package test1.nh.com.demos1.activities.horizontalScroll;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -27,10 +29,46 @@ public class HorizontalScrollActivity extends AppCompatActivity {
 
 
 
+    ItemPicker picker,datePicker,timePicker;
+
+
+    public void changeFormatter(View v){
+//        picker.resetFormatter(new ItemPicker.DateFormatter());
+        timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(10+5));
+    }
+
+
+    Handler lateInit=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            ItemPicker.syncFocalPoint(datePicker,timePicker);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horizontal_scroll);
+
+
+        picker= (ItemPicker) findViewById(R.id.test_picker);
+
+
+        datePicker= (ItemPicker) findViewById(R.id.date_picker);
+        timePicker= (ItemPicker) findViewById(R.id.time_picker);
+
+        datePicker.setOnSelectionChangedListener(new ItemPicker.OnSelectionChangedListener() {
+            @Override
+            public void onSelectionChanged(ItemPicker picker, int oldValue, int newValue) {
+                Log.i("BBB","old:"+picker.getFormattedItem(oldValue)+"   new:"+picker.getFormattedItem(newValue)+"  new index:"+newValue);
+//                timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(20+newValue),0);
+//                ItemPicker.syncFocalPoint(datePicker,timePicker);
+            }
+        });
+
+        lateInit.sendEmptyMessageDelayed(1,300);
+
 
 
 
@@ -63,6 +101,9 @@ public class HorizontalScrollActivity extends AppCompatActivity {
                 runner.startScroll();
             }
         });
+
+
+
 
 
     }
