@@ -467,6 +467,16 @@
             android:onClick="jump_test3d_scroll"
             android:text="3d canvas 测试"/>
 
+        <Button
+            android:id="@+id/button60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button59"
+            android:onClick="jump_fling_test"
+            android:text="fling 测试"/>
+
+
+
 
     </RelativeLayout>
 

@@ -117,7 +117,7 @@
         <attr name="textSize" format="dimension" />
         <attr name="heightAdjustment" format="float" />
         <attr name="focalPoint" format="float" />
-        <attr name="selectedItemIndex" format="integer" />
+        <attr name="startIndex" format="integer" />
         <attr name="itemCountHalf" format="integer" />
         <attr name="selectionIndicatorColor" format="color" />
         <attr name="selectionIndicator" format="enum">

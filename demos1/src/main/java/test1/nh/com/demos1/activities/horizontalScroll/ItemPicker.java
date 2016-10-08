@@ -12,6 +12,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.ViewConfigurationCompat;
 import android.text.TextPaint;
 import android.util.AttributeSet;
@@ -46,8 +48,8 @@ public class ItemPicker extends View {
     private static final float DEFAULT_FOCAL_POINT=0.5f;
 
 
-    private int selectedItemIndex;
-    private static final int DEFAULT_SELECTED_ITEM_INDEX=0;
+    private int selectedItemIndex,startIndex;
+    private static final int DEFAULT_SELECTED_ITEM_INDEX=0,DEFAULT_START_INDEX=0;
 
     private int itemCountsHalf;  // total display item count = itemCountsHalf*2+1;
     private static final int DEFAULT_ITEMCOUNT_HALF=3;
@@ -141,10 +143,15 @@ public class ItemPicker extends View {
     }
 
     public void resetFormatter(Formatter formatter,int[] newItemList,int startIndex) {
-        selectedItemIndex=startIndex;
+        switch(scrollMode){
+            case MODE_CYCLIC:this.startIndex=startIndex;break;
+            case MODE_ONCE:this.startIndex=startIndex+itemCountsHalf;break;
+        }
         itemList=newItemList;
         initDisplay();
         resetFormatter(formatter);
+        lateInit.sendEmptyMessageDelayed(1,500);
+
     }
 
 
@@ -157,8 +164,12 @@ public class ItemPicker extends View {
             return formatter.format(itemListForOnce[item]);
         return "wrong scroll mode!";
     }
+
+
     public int getSelectedItem(){
-        return selectedItemIndex;
+        if (scrollMode==MODE_CYCLIC)
+            return itemList[selectedItemIndex];
+        else return itemListForOnce[selectedItemIndex];   // MODE_ONCE
     }
 
 
@@ -188,7 +199,7 @@ public class ItemPicker extends View {
         itemTextSize=a.getDimension(R.styleable.ItemPicker_textSize, DEFAULT_ITEM_TEXT_SIZE *scaledDensity );
         heightAdjustmentFactor=a.getFloat(R.styleable.ItemPicker_heightAdjustment, DEFAULT_HEIGHT_ADJUSTMENT_FACTOR );
         focalPoint=a.getFloat(R.styleable.ItemPicker_focalPoint, DEFAULT_FOCAL_POINT );
-        selectedItemIndex= a.getInteger(R.styleable.ItemPicker_selectedItemIndex,DEFAULT_SELECTED_ITEM_INDEX);
+        startIndex= a.getInteger(R.styleable.ItemPicker_startIndex,DEFAULT_START_INDEX);
         itemCountsHalf= a.getInteger(R.styleable.ItemPicker_itemCountHalf,DEFAULT_ITEMCOUNT_HALF);
         selectionIndicator= a.getInteger(R.styleable.ItemPicker_selectionIndicator,INDICATOR_NONE);
         indicatorColor= a.getInteger(R.styleable.ItemPicker_selectionIndicatorColor,DEFAULT_INDICATOR_COLOR);
@@ -232,7 +243,7 @@ public class ItemPicker extends View {
 
         switch(scrollMode){
             case MODE_CYCLIC:
-                if (selectedItemIndex>=itemList.length)selectedItemIndex=DEFAULT_SELECTED_ITEM_INDEX;
+                selectedItemIndex=DEFAULT_SELECTED_ITEM_INDEX;
                 oldValue=selectedItemIndex;
                 break;
 
@@ -248,7 +259,7 @@ public class ItemPicker extends View {
                 for (int ii=0;ii<itemList.length;ii++){
                     itemListForOnce[ii+itemCountsHalf]=itemList[ii];
                 }
-                if (selectedItemIndex>=itemList.length)selectedItemIndex=DEFAULT_SELECTED_ITEM_INDEX;
+                selectedItemIndex=DEFAULT_SELECTED_ITEM_INDEX;
                 selectedItemIndex+=itemCountsHalf;
                 oldValue=selectedItemIndex;
 
@@ -256,7 +267,6 @@ public class ItemPicker extends View {
                 for (int ii=0;ii<itemListForOnce.length;ii++){
                     sb.append(""+itemListForOnce[ii]);
                 }
-//                Log.i("BBB",""+sb.toString()+"    itemListForOnce.length:"+itemListForOnce.length);
                 break;
         }
 
@@ -289,7 +299,24 @@ public class ItemPicker extends View {
 
         flingScroller = new Scroller(getContext(), null);
         adjustScroller = new Scroller(getContext(), new DecelerateInterpolator(2.5f));
+
+
+        lateInit.sendEmptyMessageDelayed(1,500);
     }
+
+
+
+    Handler lateInit=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (startIndex!=DEFAULT_START_INDEX) {
+                adjustAngleStart = 0;
+                adjustScroller.startScroll(0, 0, 0, -startIndex * itemAngle, 300);
+                invalidate();
+            }
+        }
+    };
 
 
 
@@ -329,7 +356,9 @@ public class ItemPicker extends View {
 
 
     private int convert2OffsetAngle(int offsetY){
-        return offsetY/2;
+        int signNum=offsetY>0?1:-1;
+        int ret=Math.abs(offsetY)/2>itemAngle/2?itemAngle/2*signNum:offsetY/2;
+        return ret;
     }
 
     private int currentOffsetAngle=0,currentReducedOffsetAngle=0;
@@ -352,15 +381,18 @@ public class ItemPicker extends View {
 
 
             case MODE_ONCE:
+
+                int cycleLength=itemListForOnce.length-itemCountsHalf;
                 if (offset>=0){
-                    return (selectedItemIndex+offset)%itemListForOnce.length;
+                    if (selectedItemIndex+offset>=cycleLength) return selectedItemIndex+offset-cycleLength+itemCountsHalf;
+                    else return (selectedItemIndex+offset);
                 } else  {
-                    if ((selectedItemIndex+offset)==-1){
-                        return itemListForOnce.length-1;
-                    } else if((selectedItemIndex+offset)>-1){
+                    if ((selectedItemIndex+offset)==itemCountsHalf-1){
+                        return cycleLength-1;
+                    } else if((selectedItemIndex+offset)>itemCountsHalf-1){
                         return selectedItemIndex+offset;
                     } else {   //  -->  ((selectedItemIndex+offset)<-1)
-                        return itemListForOnce.length+selectedItemIndex+offset;
+                        return cycleLength+selectedItemIndex+offset;
                     }
                 }
 
@@ -568,7 +600,11 @@ public class ItemPicker extends View {
 
     int oldValue;
 
+
+
+
     private void adjustYPosition() {
+
         switch (scrollMode){
             case MODE_CYCLIC:
                 if (adjustScroller.isFinished()  && !scrolling ) {
@@ -612,15 +648,53 @@ public class ItemPicker extends View {
                         }
                     }
 
+
+                    if (currentOffsetAngle>= 0){
+                        if (currentOffsetAngle==0){
+
+                            if (oldValue!=selectedItemIndex) {
+                                if (onSelectionChangedListener != null)
+                                    onSelectionChangedListener.onSelectionChanged(this, oldValue, selectedItemIndex);
+                                oldValue = selectedItemIndex;
+                            }
+
+                            return;
+                        }
+                        adjustAngleStart=0;
+                        adjustScroller.startScroll(0, 0, 0, -currentOffsetAngle, 300);
+                        invalidate();
+                        return;
+                    }
+
+                    if (currentOffsetAngle<= (-(itemList.length-1) * itemAngle)){
+                        if (currentOffsetAngle==(-(itemList.length-1) * itemAngle)) {
+
+                            if (oldValue!=selectedItemIndex) {
+                                if (onSelectionChangedListener != null)
+                                    onSelectionChangedListener.onSelectionChanged(this, oldValue, selectedItemIndex);
+                                oldValue = selectedItemIndex;
+                            }
+
+                            return;
+                        }
+
+                        adjustAngleStart=0;
+                        adjustScroller.startScroll(0, 0, 0,  (-(itemList.length-1) * itemAngle)-currentOffsetAngle, 300);
+                        invalidate();
+                        return;
+                    }
+
+
+
                     int dyAngle=displayList[selectedIndexInDisplayList].offsetAngle ;
-                    Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle+"-----------");
+                    Log.i("BBB","adjustYPosition...  currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle+"-----------");
                     if (dyAngle != 0) {
-                        Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle);
+//                        Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle);
                         adjustAngleStart=0;
                         adjustScroller.startScroll(0, 0, 0, -dyAngle, 300);
                         invalidate();
                     } else {
-                        Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle);
+//                        Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle);
                         if (oldValue!=selectedItemIndex) {
                             if (onSelectionChangedListener != null)
                                 onSelectionChangedListener.onSelectionChanged(this, oldValue, selectedItemIndex);
@@ -644,6 +718,7 @@ public class ItemPicker extends View {
     @Override
     public void computeScroll() {
 
+//        Log.i("BBB","computeScroll...");
         Scroller scroller = flingScroller;
         if (scroller.isFinished()) {
             adjustYPosition();
@@ -653,12 +728,9 @@ public class ItemPicker extends View {
             }
         }
         if (scrollMode==MODE_ONCE){
-//            Log.i("BBB","itemList.length * itemAngle:"+(itemList.length * itemAngle)+"    currentOffsetAngle:"+currentOffsetAngle+"     (currentOffsetAngle<= (-itemList.length * itemAngle)):"+(currentOffsetAngle<= (-itemList.length * itemAngle))+"    (currentOffsetAngle>=0):"+(currentOffsetAngle>=0));
-            if ((currentOffsetAngle<= (-(itemList.length-1) * itemAngle))|| (currentOffsetAngle>=0) ){
-                scroller.forceFinished(true);
-//                scroller.computeScrollOffset();
-//                adjustYPosition();
-                return;
+            if ((currentOffsetAngle< (-(itemList.length-1) * itemAngle))|| (currentOffsetAngle>0) ){
+//                Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle);
+                flingScroller.forceFinished(true);
             }
         }
 
@@ -760,6 +832,7 @@ public class ItemPicker extends View {
 
         switch (currentTouchAction){
             case MotionEvent.ACTION_DOWN:
+//                Log.i("BBB","ACTION_DOWN...");
                 scrolling =true;
                 touchStartY= (int) event.getY();
                 if (!adjustScroller.isFinished()||!flingScroller.isFinished()){
@@ -769,10 +842,12 @@ public class ItemPicker extends View {
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
+//                Log.i("BBB","ACTION_MOVE...");
                 touchCurrentY= (int) event.getY();
                 touchOffsetY=touchCurrentY-touchStartY;
 
-                if (!scrolling && Math.abs(touchOffsetY) < touchSlope) {
+//                Log.i("CCC","touchOffsetY:"+Math.abs(touchOffsetY)+"    touchSlope:"+touchSlope);
+                if (!scrolling && Math.abs(touchOffsetY) < touchSlope && Math.abs(touchOffsetY) > 3 * touchSlope) {
                     return false;
                 } else {
                     scrolling =true;
@@ -800,19 +875,22 @@ public class ItemPicker extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
+//                Log.i("BBB","ACTION_UP...");
                 scrolling = false;
 
 
                 mVelocityTracker.computeCurrentVelocity(1000, maxFlingVelocity);
                 int initialVelocity = (int) mVelocityTracker.getYVelocity();
 
-                if (Math.abs(initialVelocity) > minFlingVelocity) {//如果快速滑动
+//                Log.i("CCC","FLING???  ....     initialVelocity:"+initialVelocity+"    minFlingVelocity:"+minFlingVelocity);
+                if (Math.abs(initialVelocity) > minFlingVelocity  ) {//如果快速滑动
+
                     switch(scrollMode){
                         case MODE_CYCLIC:
                             fling(initialVelocity);
                             break;
                         case MODE_ONCE:
-                            fling(initialVelocity/2);
+                            fling(initialVelocity);
                             break;
 
                     }
@@ -837,13 +915,14 @@ public class ItemPicker extends View {
 
 
     private void fling(int startYVelocity) {
+//        Log.i("BBB","fling...");
         int maxY = 0;
         switch(scrollMode){
             case MODE_CYCLIC:
                 maxY=120;
                 break;
             case MODE_ONCE:
-                maxY=20;
+                maxY=120;
                 break;
         }
         if (startYVelocity > 0) {//向下滑动

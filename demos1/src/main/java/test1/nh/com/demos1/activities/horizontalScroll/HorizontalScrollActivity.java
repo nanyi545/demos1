@@ -33,7 +33,6 @@ public class HorizontalScrollActivity extends AppCompatActivity {
 
 
     public void changeFormatter(View v){
-//        picker.resetFormatter(new ItemPicker.DateFormatter());
         timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(10+5));
     }
 
@@ -62,8 +61,8 @@ public class HorizontalScrollActivity extends AppCompatActivity {
             @Override
             public void onSelectionChanged(ItemPicker picker, int oldValue, int newValue) {
                 Log.i("BBB","old:"+picker.getFormattedItem(oldValue)+"   new:"+picker.getFormattedItem(newValue)+"  new index:"+newValue);
-//                timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(20+newValue),0);
-//                ItemPicker.syncFocalPoint(datePicker,timePicker);
+                timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(20+newValue),3);
+                ItemPicker.syncFocalPoint(datePicker,timePicker);
             }
         });
 
@@ -76,8 +75,6 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         scrollToBtn = (Button) findViewById(R.id.btn_scroll_to);
         scrollByBtn = (Button) findViewById(R.id.btn_scroll_by);
         scrollByBtn_anim = (Button) findViewById(R.id.btn_scroll_by_anim);
-
-
 
 
 
