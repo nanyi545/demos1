@@ -183,13 +183,11 @@
 
 
 
-    <!--app:selectedItemIndex="2"-->
     <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
         android:padding="10dp"
         app:textSize="18sp"
         app:selectionIndicator="rect"
         app:itemCountHalf="3"
-        app:startIndex="5"
         android:background="#FFFFFF"
         android:layout_below="@+id/test_picker"
         android:id="@+id/date_picker"

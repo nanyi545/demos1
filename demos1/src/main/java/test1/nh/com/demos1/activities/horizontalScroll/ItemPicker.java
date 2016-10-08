@@ -61,7 +61,7 @@ public class ItemPicker extends View {
     private int indicatorColor;
     private static final int DEFAULT_INDICATOR_COLOR=Color.argb(180,102,255,255);
 
-    private int scrollMode=MODE_ONCE;
+    private int scrollMode;
     private static final int MODE_CYCLIC=1,MODE_ONCE=2;
 
 
@@ -138,16 +138,23 @@ public class ItemPicker extends View {
 
     public void resetFormatter(Formatter formatter,int[] newItemList) {
         itemList=newItemList;
+        init();
         initDisplay();
         resetFormatter(formatter);
     }
 
     public void resetFormatter(Formatter formatter,int[] newItemList,int startIndex) {
         switch(scrollMode){
-            case MODE_CYCLIC:this.startIndex=startIndex;break;
-            case MODE_ONCE:this.startIndex=startIndex+itemCountsHalf;break;
+            case MODE_CYCLIC:
+                this.startIndex=startIndex;
+                break;
+            case MODE_ONCE:
+                this.startIndex=startIndex;
+                break;
         }
         itemList=newItemList;
+        init();
+
         initDisplay();
         resetFormatter(formatter);
         lateInit.sendEmptyMessageDelayed(1,500);
@@ -203,6 +210,7 @@ public class ItemPicker extends View {
         itemCountsHalf= a.getInteger(R.styleable.ItemPicker_itemCountHalf,DEFAULT_ITEMCOUNT_HALF);
         selectionIndicator= a.getInteger(R.styleable.ItemPicker_selectionIndicator,INDICATOR_NONE);
         indicatorColor= a.getInteger(R.styleable.ItemPicker_selectionIndicatorColor,DEFAULT_INDICATOR_COLOR);
+        scrollMode= a.getInteger(R.styleable.ItemPicker_srollMode,MODE_CYCLIC);
         a.recycle();
     }
 
@@ -234,6 +242,8 @@ public class ItemPicker extends View {
     int paddingLeft,paddingRight,paddingTop,paddingBottom;
 
     private void init(){
+        currentOffsetAngle=0;
+        currentReducedOffsetAngle=0;
         paddingLeft=getPaddingLeft();
         paddingRight=getPaddingRight();
         paddingTop=getPaddingTop();
@@ -361,7 +371,7 @@ public class ItemPicker extends View {
         return ret;
     }
 
-    private int currentOffsetAngle=0,currentReducedOffsetAngle=0;
+    private int currentOffsetAngle,currentReducedOffsetAngle;
 
 
     private int indexRelative2Selection(int offset){
@@ -861,11 +871,11 @@ public class ItemPicker extends View {
                 if (scrollMode==MODE_ONCE){  //  touchOffsetY +  --> finger scroll down       touchOffsetY -  --> finger scroll up
                     if ( ((selectedItemIndex+itemCountsHalf)>=itemListForOnce.length-1) &&  touchOffsetY<0 ){
                         touchOffsetY=0;
-//                        Log.i("BBB","UP--------REACHED");
+                        Log.i("BBB","UP--------REACHED");
                     }
                     if ( ((selectedItemIndex-itemCountsHalf)<=0) &&  touchOffsetY>0 ){
                         touchOffsetY=0;
-//                        Log.i("BBB","DOWN--------REACHED");
+                        Log.i("BBB","DOWN--------REACHED");
                     }
                 }
                 touchStartY=touchCurrentY;
@@ -983,10 +993,18 @@ public class ItemPicker extends View {
     }
 
 
-    static class DefaultFormatter implements Formatter{
+    private static class DefaultFormatter implements Formatter{
         @Override
         public String format(int item) {
             if (item<0) return "";
+            return ""+item;
+        }
+    }
+
+    public static class TestFormatter implements Formatter{
+        @Override
+        public String format(int item) {
+            if (item<0) return "---";
             return ""+item;
         }
     }
@@ -1000,7 +1018,8 @@ public class ItemPicker extends View {
             c.add(Calendar.DAY_OF_YEAR,item);
             SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
             String formatted = format1.format(c.getTime());
-            return formatted;
+            String suffix=(item==0)?"":"";
+            return formatted+suffix;
         }
     }
 

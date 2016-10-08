@@ -127,6 +127,10 @@
             <enum name="double_line" value="3"/>
             <enum name="round_rect" value="4"/>
         </attr>
+        <attr name="srollMode" format="enum">
+            <enum name="cyclic" value="1"/>
+            <enum name="show_once" value="2"/>
+        </attr>
 
     </declare-styleable>
 
