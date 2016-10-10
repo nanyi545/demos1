@@ -5,8 +5,8 @@
       <root url="jar://$PROJECT_DIR$/demos1/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.8-RELEASE/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app0914/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.8-RELEASE/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/app0914/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.8-RELEASE/res" />
+      <root url="jar://$PROJECT_DIR$/app0914/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.8-RELEASE/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

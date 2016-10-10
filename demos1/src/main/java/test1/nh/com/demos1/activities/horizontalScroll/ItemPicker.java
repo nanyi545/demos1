@@ -130,7 +130,7 @@ public class ItemPicker extends View {
     public void resetFormatter(Formatter formatter){
         this.formatter=formatter;
         measureText();
-        topShaderPaint=null;    //  change formatter might change   itemTextRect.height   (  possible when change between   pure number <--> chinese text  )
+        topShaderPaint=null;    //  change formatter might change   itemTextRect.height   (  possible when change between   pure number <--> english/chinese text  )
         bottomShaderPaint=null; //  set shader to null will reset shader (in onMeasure) according to the new itemTextRect.height  ...
         requestLayout();  // to remeasure the view size
         invalidate();
@@ -144,14 +144,8 @@ public class ItemPicker extends View {
     }
 
     public void resetFormatter(Formatter formatter,int[] newItemList,int startIndex) {
-        switch(scrollMode){
-            case MODE_CYCLIC:
-                this.startIndex=startIndex;
-                break;
-            case MODE_ONCE:
-                this.startIndex=startIndex;
-                break;
-        }
+        this.startIndex=startIndex;  // for both MODE_CYCLIC / MODE_ONCE
+
         itemList=newItemList;
         init();
 
@@ -164,12 +158,19 @@ public class ItemPicker extends View {
 
 
 
+
+
     public String getFormattedItem(int item){
         if (scrollMode==MODE_CYCLIC)
         return formatter.format(itemList[item]);
         else if (scrollMode==MODE_ONCE)
             return formatter.format(itemListForOnce[item]);
         return "wrong scroll mode!";
+    }
+
+
+    public String getFormattedItem(){
+        return formatter.format(getSelectedItem());
     }
 
 
@@ -189,7 +190,7 @@ public class ItemPicker extends View {
     int viewWidth,viewHeight,verticalSpacing, viewCenterY,itemAngle,offSetAngleMax;
 
 
-    int[] itemList={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
+    int[] itemList={4,5,6,7,8,9,10,11,12,13,14,15,16,17};
     int[] itemListForOnce={};
 
 
@@ -208,9 +209,9 @@ public class ItemPicker extends View {
         focalPoint=a.getFloat(R.styleable.ItemPicker_focalPoint, DEFAULT_FOCAL_POINT );
         startIndex= a.getInteger(R.styleable.ItemPicker_startIndex,DEFAULT_START_INDEX);
         itemCountsHalf= a.getInteger(R.styleable.ItemPicker_itemCountHalf,DEFAULT_ITEMCOUNT_HALF);
-        selectionIndicator= a.getInteger(R.styleable.ItemPicker_selectionIndicator,INDICATOR_NONE);
-        indicatorColor= a.getInteger(R.styleable.ItemPicker_selectionIndicatorColor,DEFAULT_INDICATOR_COLOR);
-        scrollMode= a.getInteger(R.styleable.ItemPicker_srollMode,MODE_CYCLIC);
+        selectionIndicator= a.getInteger(R.styleable.ItemPicker_highLightIndicator,INDICATOR_NONE);
+        indicatorColor= a.getInteger(R.styleable.ItemPicker_highLightColor,DEFAULT_INDICATOR_COLOR);
+        scrollMode= a.getInteger(R.styleable.ItemPicker_scrollMode,MODE_CYCLIC);
         a.recycle();
     }
 
@@ -273,10 +274,6 @@ public class ItemPicker extends View {
                 selectedItemIndex+=itemCountsHalf;
                 oldValue=selectedItemIndex;
 
-                StringBuilder sb=new StringBuilder();
-                for (int ii=0;ii<itemListForOnce.length;ii++){
-                    sb.append(""+itemListForOnce[ii]);
-                }
                 break;
         }
 
@@ -531,11 +528,22 @@ public class ItemPicker extends View {
 
             case INDICATOR_ROUNDED_RECT:
                 RectF oval1=new RectF(paddingLeft/2,viewHeight/2-selectorHeightHalf+paddingTop,paddingLeft+ovalWidth+paddingLeft/2,viewHeight/2+selectorHeightHalf+paddingTop);
+                Rect rect1=new Rect(paddingLeft/2,viewHeight/2-selectorHeightHalf+paddingTop,paddingLeft+ovalWidth/2+paddingLeft/2,viewHeight/2+selectorHeightHalf+paddingTop);
                 RectF oval2=new RectF(paddingLeft/2+viewWidth-ovalWidth,viewHeight/2-selectorHeightHalf+paddingTop,paddingLeft+viewWidth+paddingLeft/2,viewHeight/2+selectorHeightHalf+paddingTop);
-                Rect rect1=new Rect(paddingLeft+ovalWidth/2,viewHeight/2-selectorHeightHalf+paddingTop,paddingLeft+viewWidth-ovalWidth/2,viewHeight/2+selectorHeightHalf+paddingTop);
+                Rect rect2=new Rect(paddingLeft/2+viewWidth-ovalWidth/2,viewHeight/2-selectorHeightHalf+paddingTop,paddingLeft+viewWidth+paddingLeft/2,viewHeight/2+selectorHeightHalf+paddingTop);
+
+                Rect rectCenter=new Rect(paddingLeft+ovalWidth/2,viewHeight/2-selectorHeightHalf+paddingTop,paddingLeft+viewWidth-ovalWidth/2,viewHeight/2+selectorHeightHalf+paddingTop);
+                canvas.save();
+                canvas.clipRect(rect1);
                 canvas.drawOval(oval1,selectionPaint);
+                canvas.restore();
+
+                canvas.save();
+                canvas.clipRect(rect2);
                 canvas.drawOval(oval2,selectionPaint);
-                canvas.drawRect(rect1,selectionPaint);
+                canvas.restore();
+
+                canvas.drawRect(rectCenter,selectionPaint);
                 break;
             case INDICATOR_SINGLE_LINE:
                 canvas.drawLine(0,viewHeight/2+selectorHeightHalf+paddingTop,viewWidth+paddingLeft+paddingRight,viewHeight/2+selectorHeightHalf+paddingTop,selectionPaint);
@@ -697,7 +705,7 @@ public class ItemPicker extends View {
 
 
                     int dyAngle=displayList[selectedIndexInDisplayList].offsetAngle ;
-                    Log.i("BBB","adjustYPosition...  currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle+"-----------");
+//                    Log.i("BBB","adjustYPosition...  currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle+"-----------");
                     if (dyAngle != 0) {
 //                        Log.i("BBB","currentOffsetAngle:"+currentOffsetAngle+"  dyAngle:"+dyAngle);
                         adjustAngleStart=0;
@@ -871,11 +879,11 @@ public class ItemPicker extends View {
                 if (scrollMode==MODE_ONCE){  //  touchOffsetY +  --> finger scroll down       touchOffsetY -  --> finger scroll up
                     if ( ((selectedItemIndex+itemCountsHalf)>=itemListForOnce.length-1) &&  touchOffsetY<0 ){
                         touchOffsetY=0;
-                        Log.i("BBB","UP--------REACHED");
+//                        Log.i("BBB","UP--------REACHED");
                     }
                     if ( ((selectedItemIndex-itemCountsHalf)<=0) &&  touchOffsetY>0 ){
                         touchOffsetY=0;
-                        Log.i("BBB","DOWN--------REACHED");
+//                        Log.i("BBB","DOWN--------REACHED");
                     }
                 }
                 touchStartY=touchCurrentY;
@@ -966,7 +974,7 @@ public class ItemPicker extends View {
 
     public static int[] generateArray(int size){
         int[] ret=new int[size];
-        for (int ii=0;ii<size;ii++)ret[ii]=ii;
+        for (int ii=0;ii<size;ii++)ret[ii]=ii+4;
         return ret;
     }
 

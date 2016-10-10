@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
+import android.widget.TextView;
 
 import test1.nh.com.demos1.R;
 
@@ -45,6 +46,8 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         }
     };
 
+    TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,11 +60,17 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         datePicker= (ItemPicker) findViewById(R.id.date_picker);
         timePicker= (ItemPicker) findViewById(R.id.time_picker);
 
+
+        tv= (TextView) findViewById(R.id.selected_time);
+
+        timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(20),3);
+
         datePicker.setOnSelectionChangedListener(new ItemPicker.OnSelectionChangedListener() {
             @Override
             public void onSelectionChanged(ItemPicker picker, int oldValue, int newValue) {
-                Log.i("BBB","old:"+picker.getFormattedItem(oldValue)+"   new:"+picker.getFormattedItem(newValue)+"  new index:"+newValue);
-                timePicker.resetFormatter(new ItemPicker.TestFormatter(),ItemPicker.generateArray(20+newValue),0);
+                Log.i("BBB","old:"+picker.getFormattedItem(oldValue)+"   new:"+picker.getFormattedItem(newValue)+"  new index:"+newValue+ "   selected:"+picker.getSelectedItem()+"   current item:"+datePicker.getFormattedItem());
+                timePicker.resetFormatter(new ItemPicker.HourFormatterBy30(),ItemPicker.generateArray(20+newValue),0);
+                tv.setText(datePicker.getFormattedItem()+"-"+timePicker.getFormattedItem());
                 ItemPicker.syncFocalPoint(datePicker,timePicker);
             }
         });
@@ -69,7 +78,8 @@ public class HorizontalScrollActivity extends AppCompatActivity {
         timePicker.setOnSelectionChangedListener(new ItemPicker.OnSelectionChangedListener() {
             @Override
             public void onSelectionChanged(ItemPicker picker, int oldValue, int newValue) {
-                Log.i("BBB","time picker old:"+picker.getFormattedItem(oldValue)+"   new:"+picker.getFormattedItem(newValue)+"  new index:"+newValue);
+                tv.setText(datePicker.getFormattedItem()+"-"+timePicker.getFormattedItem());
+                Log.i("BBB","time picker old:"+picker.getFormattedItem(oldValue)+"   new:"+picker.getFormattedItem(newValue)+"  new index:"+newValue+ "   selected:"+picker.getSelectedItem()+"   current item:"+timePicker.getFormattedItem());
             }
         });
 

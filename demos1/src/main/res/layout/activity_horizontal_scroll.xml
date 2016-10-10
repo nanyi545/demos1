@@ -159,7 +159,7 @@
     <!--app:heightAdjustment="1.5"-->
     <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
         app:textSize="16sp"
-        app:selectionIndicator="rect"
+        app:highLightIndicator="single_line"
         app:itemCountHalf="2"
         android:background="#FFFFFF"
         android:layout_toRightOf="@+id/day_picker"
@@ -171,6 +171,8 @@
         />
 
     <TextView
+
+        android:id="@+id/selected_time"
         android:layout_below="@+id/test_picker"
         android:layout_toRightOf="@+id/time_picker"
         android:textSize="16sp"
@@ -186,8 +188,9 @@
     <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
         android:padding="10dp"
         app:textSize="18sp"
-        app:selectionIndicator="rect"
+        app:highLightIndicator="rect"
         app:itemCountHalf="3"
+        app:scrollMode="show_once"
         android:background="#FFFFFF"
         android:layout_below="@+id/test_picker"
         android:id="@+id/date_picker"
@@ -198,8 +201,9 @@
     <test1.nh.com.demos1.activities.horizontalScroll.ItemPicker
         android:padding="10dp"
         app:textSize="18sp"
-        app:selectionIndicator="round_rect"
+        app:highLightIndicator="double_line"
         app:itemCountHalf="3"
+        app:scrollMode="show_once"
         android:background="#FFFFFF"
         android:layout_below="@+id/test_picker"
         android:layout_toRightOf="@+id/date_picker"
